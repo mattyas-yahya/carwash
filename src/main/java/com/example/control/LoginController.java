@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import org.springframework.context.annotation.Lazy;
 
+
+@Lazy
 @Controller
 public class LoginController {
 
