@@ -1,0 +1,172 @@
+
+
+
+<div id="modal_new_acc" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog" style="width:1650px;">
+<div class="modal-content">
+
+<div class="modal-body">
+<div class="col-md-35">
+
+
+
+<div class="tab-content">
+<div class="box box-default">
+<div >
+<div class="box-tools pull-right">
+<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+</div>
+</div>
+<div class="box-body">
+  <form data-toggle="validator" id ="form_Account" role="form" th:object="${Account}" th:action="@{/ac_komit}" method="post">
+    <div id="info"></div>
+
+    <div class="col-md-12">
+      <div class='box-header'>
+        <div class="box-body">
+
+          <div class="col-md-12">
+            <table class="table table-striped table-bordered table-hover" width="220%">
+              <h2>Create New Account</h2>
+              <tr hidden>
+                <td> <div class="form-group" >
+                  <label for="nama">id_account</label>
+                  <input type="text" class="form-control" th:field="*{id_account}" id="id_account" readonly />
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td> <div class="form-group" >
+                  <label for="nama">code_account</label>
+                  <input type="text" class="form-control" th:field="*{kode}" id="kode"  />
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-group">
+                    <label for="nama">Description</label>
+                    <input type="text" required="true" class="form-control" th:field="*{keterangan}" id="keterangan" name="keterangan" />
+                  </div>
+                </td>
+
+              </tr>
+
+
+            </table>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <center>
+      <button class="btn btn-warning btn-lg" id="simpan_acc"  type="submit" value="ac_simpan" name="ac_action"><b class="glyphicon glyphicon-floppy-disk"></b> Post</button>
+      <!--<button class="btn btn-warning btn-lg" id="edit_asset"   type="submit" value="ubah" name="action">edit</button>-->
+      <!--                  <button class="btn btn-danger btn-lg"  type="submit" value="hapus" name="laction"><b class="glyphicon glyphicon-trash"></b> delete</button>-->
+    </center>
+  </form>
+
+</div>
+<div class="box-footer">
+.
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+(
+function()
+{
+if (window.addEventListener)
+{
+window.addEventListener('load', run, false);
+}
+else if (window.attachEvent)
+{
+window.attachEvent('onload', run);
+}
+function run()
+{
+var t = document.getElementById('tabelver');
+t.onclick = function (event) {
+event = event || window.event; //IE8
+var target = event.target || event.srcElement;
+while (target && target.nodeName !== 'TR') { // find TR
+target = target.parentElement;
+}
+var cells = target.cells; //cell collection - https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement
+if (!cells.length || target.parentNode.nodeName === 'THEAD') {
+return;
+}
+var f1 = document.getElementById('ax');
+var f2 = document.getElementById('bx');
+var f3 = document.getElementById('cx');
+var f4 = document.getElementById('dx');
+var f5 = document.getElementById('ex');
+var f6 = document.getElementById('fx');
+var f7 = document.getElementById('gx');
+var f8 = document.getElementById('hx');
+var f9 = document.getElementById('ix');
+var f10 = document.getElementById('jx');
+var f11= document.getElementById('kx');
+var f12 = document.getElementById('lx');
+var f13 = document.getElementById('mx');
+var f14 = document.getElementById('nx');
+var f15 = document.getElementById('ox');
+var f16 = document.getElementById('px');
+var f17 = document.getElementById('qx');
+var f18 = document.getElementById('rx');
+var f19 = document.getElementById('sx');
+var f20 = document.getElementById('tx');
+var f21 = document.getElementById('ux');
+var f22 = document.getElementById('vx');
+var f23 = document.getElementById('wx');
+
+
+
+
+f1.value = cells[0].innerHTML;
+f2.value = cells[1].innerHTML;
+f3.value = cells[2].innerHTML;
+f4.value = cells[3].innerHTML;
+f5.value = cells[4].innerHTML;
+f6.value = cells[5].innerHTML;
+f7.value = cells[6].innerHTML;
+f8.value = cells[7].innerHTML;
+f9.value = cells[8].innerHTML;
+f10.value = cells[9].innerHTML;
+f11.value = cells[10].innerHTML;
+f12.value = cells[11].innerHTML;
+f13.value = cells[12].innerHTML;
+f14.value = cells[13].innerHTML;
+f15.value = cells[14].innerHTML;
+f16.value = cells[15].innerHTML;
+f17.value = cells[16].innerHTML;
+f18.value = cells[17].innerHTML;
+f19.value = cells[18].innerHTML;
+f20.value = cells[19].innerHTML;
+f21.value = cells[20].innerHTML;
+f22.value = cells[21].innerHTML;
+f23.value = cells[22].innerHTML;
+
+
+
+
+$("#codein").val(document.getElementById('ex').value);
+
+};
+}
+})
+();
+</script>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Data Pekerja</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<h2>
+Data Pekerja
+<small>Form Control</small>
+</h2>
+
+</section>
+<div layout:fragment="content">
+<div class="col-md-12">
+<div >
+<div>
+
+
+</div>
+<div class="box-body">
+
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" id="poverview" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" id="pgeneral" data-toggle="tab">General</a></li>
+<!--<li ><a id="tab_3xxx" href="#tab_3" data-toggle="tab">History Maintenance</a></li>-->
+</ul>
+<div class="tab-content">
+<span th:replace="pekerja/modal_plant"/>
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div class="panel panel-default">
+  <button class="btn btn-info btn-lg" id="prefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+  <button class="btn btn-warning btn-lg" id="pedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+  <button class="btn btn-success btn-lg" id="padd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+
+  <table id="tabelpekerja" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id_pekerja</th>
+<th>id_plant</th>
+
+<th >nama_lengkap</th>
+<th >nama_panggilan</th>
+<th >Alamat</th>
+<th>Status Pernikahan</th>
+<th> tgl_lahir </th>
+<th>tgl_masuk_kerja</th>
+<th> jabatan</th>
+<th>code_jabatan</th>
+<th>stat_pegawai</th>
+<th>code_plant</th>
+<th>status_active</th>
+
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+
+<!--<input type=hidden id="av" name="av" value=""/>-->
+
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+<form data-toggle="validator" id ="form_pekerja" name ="form_pekerja" role="form" th:object="${pekerja}"  method="post">
+
+<div id="info"></div>
+
+
+<div class="col-md-6">
+<table class="table table-striped table-bordered table-hover" width="220%">
+<h2>Detail Information</h2>
+<tr >
+<div class="form-group"  hidden>
+<label  >id_pekerja</label>
+<input type="text" class="form-control" th:field="*{id_pekerja}" id="id_pekerja"  />
+</div>
+</tr>
+<tr >
+<div class="form-group"  hidden>
+<label  >id_plant</label>
+<input type="text" class="form-control" th:field="*{id_plant}" id="id_plant"  />
+</div>
+</tr>
+<tr>
+<div class="form-group" >
+<label  >nama_lengkap</label>
+<input type="text" class="form-control" th:field="*{nama_lengkap}" id="nama_lengkap"  />
+</div>
+
+</tr>
+<tr>
+<div class="form-group" >
+<label  >nama_panggilan</label>
+<input type="text" class="form-control" th:field="*{nama_panggilan}" id="nama_panggilan"  />
+</div>
+</tr>
+<tr>
+<div class="form-group" >
+<label  >Alamat</label>
+<input type="text" class="form-control" th:field="*{Alamat}" id="Alamat"  />
+</div>
+</td>
+</tr>
+<tr>
+<div class="form-group">
+<label  > Status Pernikahan</label>
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-id-card"></i>
+</div>
+<select th:field="*{Status_pernikahan}" id=" Status_pernikahan" class="form-control" required="true">
+<option th:each="type : ${pekerja}" th:value="'Menikah'" th:text="Menikah">Menikah</option>
+<option th:each="type : ${pekerja}"  th:value="'Belum_Menikah'" th:text="Belum_Menikah">Belum Menikah</option>
+</select>
+</div>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label  > tgl_lahir</label>
+<input type="text" required="true" class="form-control" th:field="*{tgl_lahir}" id="tgl_lahir" name="tgl_lahir" placeholder=""/>
+</div>
+</tr>
+</table>
+</div>
+
+
+<div class="col-md-6">
+<table class="table table-striped table-bordered table-hover" width="220%">
+<h2>Employee Information</h2>
+<tr >
+<div class="form-group" >
+<label  >tgl_masuk_kerja</label>
+<input type="text" class="form-control" th:field="*{tgl_masuk_kerja}" id="tgl_masuk_kerja"  />
+</div>
+
+</tr>
+<tr>
+<div class="form-group" >
+<label  >jabatan</label>
+<input type="text" class="form-control" th:field="*{jabatan}" id="jabatan"  />
+</div>
+
+</tr>
+<tr>
+<div class="form-group" >
+<label  >code_jabatan</label>
+<input type="text" class="form-control" th:field="*{code_jabatan}" id="code_jabatan"  />
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label  >stat_pegawai</label>
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-id-card"></i>
+</div>
+<select th:field="*{stat_pegawai}" class="form-control" required="true">
+<option th:each="type : ${pekerja}" th:value="'Karyawan_Tetap'" th:text="Karyawan_Tetap">Karyawan Tetap</option>
+<option th:each="type : ${pekerja}"  th:value="'Karyawan_Kontrak'" th:text="Karyawan_Kontrak">Karyawan Kontrak</option>
+</select>
+</div>
+</div>
+</tr>
+<tr>
+  <div class="form-group">
+    <label >Plant</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-id-card"></i>
+      </div>
+      <input type="text" class="form-control" required="true" th:field="*{code_plant}" id="code_plant" name="code_plant" readonly />
+      <span class="input-group-btn">
+<button class="btn btn-info btn-flat" type="button" data-target="#modplant" data-toggle="modal">Select</button>
+</span>
+    </div>
+  </div>
+
+</tr>
+<tr>
+<div class="form-group">
+<label  >Status</label>
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-id-card"></i>
+</div>
+<select th:field="*{status}" class="form-control" required="true">
+<option th:each="type : ${pekerja}" th:value="'Active'" th:text="Active">Active </option>
+<option th:each="type : ${pekerja}"  th:value="'Resign'" th:text="Resign">Resign</option>
+</select>
+</div>
+</div>
+</tr>
+
+
+
+</table>
+</div>
+<center>
+  <button class="btn btn-warning btn-lg" type="submit" name="PKR1"  id="PKR1" ><b class="glyphicon glyphicon-floppy-disk"></b> Save
+  </button><!--<button class="btn btn-warning btn-lg" id="edit_asset"   type="submit" value="ubah" name="action">edit</button>-->
+  <button class="btn btn-warning btn-lg" type="submit" name="PKR2"  id="PKR2" ><b class="glyphicon glyphicon-floppy-disk"></b> Delete
+  </button>
+</center>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
+
+<script >
+$('#tgl_masuk_kerja').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$('#tgl_lahir').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$("#simpan_asset").click(function (event)
+{
+//event.stopPropagation()
+//  event.preventDefault()
+//return false;
+})
+$("#edit_asset").hide();
+
+
+
+$("#disposal").hide();
+$('#status').on('change', function() {
+var selected = $('#status option:selected').val();
+if ( selected === "Disposal" ) {
+//alert("will show");
+$("#disposal").show();
+// inputToHide.show();
+}
+else {
+//alert("will hide");
+$("#disposal").hide();
+}
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

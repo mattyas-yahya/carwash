@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Jadwal PM</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+
+<ol class="breadcrumb">
+<h3 class="active">Jadwal Preventive Maintenance</h3>
+</ol>
+</section>
+<div layout:fragment="content">
+<div class="col-md-12">
+<div >
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>
+  <li ><a href="#tab_3" data-toggle="tab">History</a></li>
+  <li ><a href="#tab_2" data-toggle="tab">Create New</a></li>
+</ul>
+<span th:replace="jadwal/modal_jadwal_pm"/>
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<div class="box-body">
+  <table aria-describedby="example_info" cellspacing="0"
+         class="table table-striped table-bordered table-hover"
+         role="grid" style="width: 100%;"
+         width="100%">
+    <td style="background-color:#ff8000" >Verified</td>
+    <td style="background-color:#e600e6">Approved</td>
+    <td style="background-color:#ff3300">Work_In_Progrees</td>
+    <td style="background-color:#3399ff">take_over</td>
+    <td style="background-color:#00cc00">End_Job</td>
+    <td style="background-color:#e6e600">Scheduled</td>
+
+  </table>
+  <div id='calendar'></div>
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+
+<form data-toggle="validator" role="form" th:object="${jadwal}" th:action="@{/j_komit}" method="post">
+
+<div class="col-md-12">
+<div class='box-header'>
+<div class="box-body">
+
+
+<div class="form-group" hidden >
+<label for="nama">id_jadwal</label>
+<input type="text" class="form-control" th:field="*{id_jadwal}" id="id_jadwal" readonly />
+<label class="control-label" th:errors="*{id_jadwal}">Pesan error nanti di sini</label>
+</div>
+  <div class="form-group" hidden >
+    <label for="nama">id_pm</label>
+    <input type="text" class="form-control" th:field="*{id_pm}" id="jid_pm" readonly />
+    <label class="control-label" th:errors="*{id_pm}">Pesan error nanti di sini</label>
+  </div>
+<div id="startdiv" class="form-group">
+<label for="nama"> Start Date</label>
+<input type="text" required="true" class="form-control" th:field="*{start}" id="start" placeholder="yyyy/dd/mm" />
+<label class="control-label" th:errors="*{start}">Pesan error nanti di sini</label>
+</div>
+<div id="endiv" class="form-group">
+<label for="nama"> End Date</label>
+<input type="text" required="true" class="form-control" th:field="*{end}" id="end" value="" name="end" placeholder="yyyy/dd/mm"/>
+<label class="control-label" th:errors="*{end}">Pesan error nanti di sini</label>
+</div>
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="nama"> Deskripsi </label>-->
+<!--                                            <input type="text" required="true" class="form-control" th:field="*{title}" id="title" name="title" placeholder="Ex: ac rusak/ kebakar"/>-->
+<!--                                            <label class="control-label" th:errors="*{title}">Pesan error nanti di sini</label>-->
+<!--                                        </div>-->
+  <div class="form-group">
+    <label for="nama">kode pm</label>
+    <input type="text" required="true" class="form-control" th:field="*{kode_pm}" id="jkode_pm"  readonly />
+  </div>
+
+
+<div class="form-group">
+<label for="nama">Deskripsi</label>
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-id-card"></i>
+</div>
+<input type="text" required="true" class="form-control" th:field="*{title}" id="title" readonly />
+<span class="input-group-btn">
+<button class="btn btn-info btn-flat" type="button" data-target="#modaspm" data-toggle="modal">Select</button>
+</span>
+</div>
+</div>
+  <div class="form-group">
+    <label for="nama">Lokasi</label>
+    <input type="text" required="true" class="form-control" th:field="*{location}" id="location"  readonly />
+  </div>
+
+  <div class="form-group">
+    <label for="nama">Status </label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-id-card"></i>
+      </div>
+      <select class="form-control" id="status"
+              required="true" th:field="*{status}">
+        <option th:each="type : ${jadwal}"
+                th:text="pilih_salah_satu"
+                th:value="'pilih_salah_satu'">pilih_salah_satu
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="Verified"
+                th:value="'Verified'">Verified
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="Approved"
+                th:value="'Approved'">Approved
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="Work_In_Progrees"
+                th:value="'Work_In_Progrees'">Work In Progrees
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="take_over"
+                th:value="'take_over'">Take Over
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="End_Job"
+                th:value="'End_Job'">End_Job
+        </option>
+        <option th:each="type : ${jadwal}"
+                th:text="Scheduled"
+                th:value="'Scheduled'">Scheduled
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group" hidden>
+    <label for="nama">color</label>
+    <input type="text" required="true" class="form-control" th:field="*{color}" id="color"  readonly />
+  </div>
+
+
+
+
+</div>
+</div>
+  <center>
+    <button class="btn btn-danger btn-lg" id="simpan_dept" type="submit" value="j_simpan" name="j_action"><b class="glyphicon glyphicon-floppy-disk"></b> Save</button>
+    <!--<button class="btn btn-vimeo btn-md"  type="submit" value="d_ubah" name="d_action">edit</button>-->
+    <button class="btn btn-warning btn-lg"  type="submit" value="j_hapus" name="j_action"><b class="glyphicon glyphicon-trash"></b> Delete</button>
+  </center>
+</div>
+
+</form>
+
+
+</div>
+  <div class="tab-pane" id="tab_3">
+
+    <div class='box-body pad'>
+      <div class="panel panel-default">
+        <table aria-describedby="example_info" cellspacing="0"
+               class="table table-striped table-bordered table-hover"
+               id="tabel_calendar" role="grid" style="width: 100%;"
+               width="100%">
+          <!-- Header Table -->
+          <thead>
+          <tr>
+            <th>id_jadwal</th>
+            <th>id_pm</th>
+            <th>start</th>
+            <th>end</th>
+            <th>kode_pm</th>
+            <th>title</th>
+            <th>Lokasi</th>
+            <th>status</th>
+
+          </tr>
+          </thead>
+          <!-- Footer Table -->
+        </table>
+        <input id="b" name="b" type=hidden value=""/>
+        <input id="c" name="c" type=hidden value=""/>
+        <input id="d" name="d" type=hidden value=""/>
+        <input id="e" name="e" type=hidden value=""/>
+        <input id="f" name="f" type=hidden value=""/>
+        <input id="g" name="g" type=hidden value=""/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+<script >
+$('#start').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+
+$('#end').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+(
+function()
+{
+if (window.addEventListener)
+{
+window.addEventListener('load', pmq, false);
+}
+else if (window.attachEvent)
+{
+window.attachEvent('onload',pmq );
+}
+function pmq()
+{
+document.getElementById("end").value =  "";
+ //$("#endiv").hide();
+}
+})
+();
+
+ $('#status').on('change', function() {
+         var selected = $('#status option:selected').val();
+         if ( selected === "Verified" )
+          {
+             document.getElementById("color").value =  "#ff8000";
+         }
+          if ( selected === "Approved")
+         {
+            document.getElementById("color").value =  "#e600e6";
+         }
+         if ( selected === "Work_In_Progrees" )
+         {
+            document.getElementById("color").value =  "#ff3300";
+
+         }
+         if ( selected === "take_over" )
+         {
+            document.getElementById("color").value =  "#3399ff";
+
+         }
+          if ( selected === "End_Job" )
+         {
+            document.getElementById("color").value =  "#00cc00";
+
+         }
+          if ( selected === "Scheduled" )
+         {
+            document.getElementById("color").value =  "#e6e600";
+              var start    = document.getElementById("start").value;
+     var someDate = new Date(document.getElementById("start").value);
+someDate.setDate(someDate.getDate() + 15); //number  of days to add, e.x. 15 days
+var dateFormated = someDate.toISOString().substr(0,10);
+console.log(dateFormated);
+
+         }
+     });
+
+
+
+</script>

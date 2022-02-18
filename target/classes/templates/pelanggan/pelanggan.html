@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title> Member</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<h2>
+    Member
+<small>Form Master</small>
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Member</li>
+</ol>
+</section>
+<div layout:fragment="content">
+<div class="col-md-12">
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" id="acoverview" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" id="pelgeneral" data-toggle="tab">General</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<table>
+<td> <button class="btn btn-info btn-lg" id="pelrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+</td>  
+<td> <button class="btn btn-warning btn-lg" id="peledit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+</td>     
+<td> <button class="btn btn-success btn-lg" id="peladd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+</td>
+</table>
+<div class="panel panel-default">
+<table id="tabel_pelanggan" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id_pelanggan</th>
+<th >kode_pelanggan</th>
+<th>nama_pelanggan</th>
+<th>jenis_kendaraan</th>
+<th >merek</th>
+<th>nopol</th>
+<th>biaya</th>
+
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+
+
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+<div id="info"></div>
+<form data-toggle="validator" id ="form_pelanggan" name ="form_pelanggan" role="form" th:object="${pelanggan}"  method="post">
+
+<div class="col-md-12">
+<table class="table table-striped table-bordered table-hover" width="220%">
+<h2>Detail Information</h2>
+<tr hidden>
+<td>
+     <div class="form-group" >
+<label for="nama">id_pelanggan</label>
+<input type="text" class="form-control" name="id_pelanggan" id="id_pelanggan" readonly />
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+     <div class="form-group" >
+<label for="nama">kode_pelanggan</label>
+<input type="text" class="form-control" name="kode_pelanggan"  id="kode_pelanggan"  />
+</div>
+        <div id="tmember" class='box-body pad'>
+            <button class="btn btn-info btn-lg" id="memrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+            <button class="btn btn-warning btn-lg" id="memedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+            <button class="btn btn-success btn-lg" id="memadd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+            
+            <div class="panel panel-default">
+            <table id="tabel_member" class="table table-striped table-bordered table-hover"  cellspacing="0"
+            width="100%" role="grid" aria-describedby="example_info"
+            style="width: 100%;">
+            <!-- Header Table -->
+            <thead>
+            <tr>
+            <th>id_member</th>
+            <th >kode</th>
+            <th>nama</th>
+            <th>alamat</th>
+            </tr>
+            </thead>
+            
+            <!-- Footer Table -->
+            </table>
+            
+            
+            </div>
+            </div>
+    </td>
+</tr>
+
+<tr>
+<td>
+<div class="form-group">
+<label for="nama">nama_pelanggan</label>
+<input type="text" required="true" class="form-control"  id="nama_pelanggan" name="nama_pelanggan" readonly />
+</div>
+</td>
+</tr>
+
+    <tr>  
+<td>
+    <div class="form-group">
+    <label for="nama">jenis_kendaraan</label>
+    <input type="text" required="true" class="form-control"  id="jenis_kendaraan" name="jenis_kendaraan" />
+    </div>
+        <div id="tjenis_kendaraan" class='box-body pad'>
+            <button class="btn btn-info btn-lg" id="jkrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+            <button class="btn btn-warning btn-lg" id="jkedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+            <button class="btn btn-success btn-lg" id="jkadd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+            
+            <div class="panel panel-default">
+            <table id="tabel_jenis_kendaraan" class="table table-striped table-bordered table-hover"  cellspacing="0"
+            width="100%" role="grid" aria-describedby="example_info"
+            style="width: 100%;">
+            <!-- Header Table -->
+            <thead>
+            <tr>
+                <th>id</th>
+                <th >Jenis Kendaraan</th>
+                <th>merek</th>
+                <th>biaya</th>
+            </tr>
+            </thead>
+            
+            <!-- Footer Table -->
+            </table>
+            
+            
+            </div>
+            </div>       
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <div class="form-group">
+        <label for="nama">merek</label>
+        <input type="text" required="true" class="form-control"  id="merek" name="merek" />
+        </div>
+        </td>
+    </tr>
+
+<tr>
+        <td>
+            <div class="form-group">
+            <label for="nama">nopol</label>
+            <input type="text" required="true" class="form-control"  id="nopol" name="nopol" />
+            </div>
+            </td>
+        </tr>
+    <tr>
+            <td>
+                <div class="form-group">
+                <label for="nama">biaya</label>
+                <input type="text" required="true" class="form-control"  id="biaya" name="biaya" readonly />
+                </div>
+                </td>
+            </tr>
+</table>
+
+</div>
+<center>
+    <button class="btn btn-warning btn-lg" type="submit" name="pl1"  id="pl1" ><b class="glyphicon glyphicon-floppy-disk"></b> Save</button>
+</center>
+</form>    
+    </div>
+
+    
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
+<script >
+$('#purchase_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$("#simpan_asset").click(function (event)
+{
+//event.stopPropagation()
+//  event.preventDefault()
+//return false;
+})
+$("#edit_asset").hide();
+$("#alertmu").fadeTo(2000, 500).slideUp(500, function()
+{
+$("#alertmu").slideUp(500);
+});
+$("#summary").hide();
+</script>

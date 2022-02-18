@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+
+
+<meta charset="utf-8"/>
+<title>Work Order</title>
+</head>
+<body  class="hold-transition skin-blue sidebar-mini">
+<ol class="breadcrumb">
+    <h3 class="active">Data Work Order</h3>
+</ol>
+<section layout:fragment="header">
+</section>
+<div layout:fragment="content">
+  <div class="item active">
+
+    <div id="drange" class="btn btn-success btn-lg">
+    <span></span> <b class="caret"></b>
+    <button width="30%"  class="btn btn-block btn-warning"  type="button" ><i class=" glyphicon glyphicon-close"></i> Export To XLS</button>
+  </div>
+
+
+<div class="col-md-12">
+<div >
+
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<!--                    <div class="col-md-4">-->
+<!--                        <div class="input-daterange">-->
+<!--                            <label>Tanggal Pengerjaan<span class="required">*</span></label>-->
+<!--                            <input type="text" name="start_date" id="start_date" class="form-control" />-->
+<!--                            <label>Tanggal Selesai<span class="required">*</span></label>-->
+<!--                            <input type="text" name="end_date" id="end_date" class="form-control" />-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+<div >
+    <div class="col-md-15" id="date_filter">
+<div class="panel panel-default">
+
+
+  <table aria-describedby="example_info" cellspacing="0"
+         class="display"
+         id="tabel_log_down" role="grid" style="width: 100%;"
+         width="100%">
+    <!-- Header Table -->
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+    </thead>
+    <!-- Footer Table -->
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+  <div>
+    <div >
+      <div id="container" width="30%"  style="height:600px">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

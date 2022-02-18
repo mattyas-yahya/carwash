@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="utf-8" />
+    <title>Report</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+    <h2>
+        Report
+        <small>Data Master Report</small>
+    </h2>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Data Asset</li>
+    </ol>
+</section>
+<div layout:fragment="content">
+    <div class="col-md-12">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab_1" data-toggle="tab">Data Asset</a></li>
+                <li ><a href="#tab_2" data-toggle="tab">Spare Part</a></li>
+                <li ><a href="#tab_3" data-toggle="tab">Preventive Maintenance</a></li>
+                <li ><a href="#tab_4" data-toggle="tab">Departemen</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <div class='box-body pad'>
+                        <div class="panel panel-default">
+                            <table id="tabelrass" class="table table-striped table-bordered table-hover"  cellspacing="0"
+                                   width="100%" role="grid" aria-describedby="example_info"
+                                   style="width: 100%;">
+                                <!-- Header Table -->
+                                <thead>
+                                <tr>
+                                    <th>id_asset</th>
+                                    <th>serial</th>
+                                    <th>nama asset</th>
+                                    <th>Kode Asset </th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Grup Asset</th>
+                                    <th>Model</th>
+                                    <th>Lokasi</th>
+                                    <th>Asset Tag</th>
+                                    <th>Harga Beli</th>
+                                    <th>Garansi</th>
+
+                                </tr>
+                                </thead>
+                                <!-- Footer Table -->
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2">
+                    <div class='box-body pad'>
+                        <div class="panel panel-default">
+                            <table id="tabelrspare" class="table table-striped table-bordered table-hover"  cellspacing="0"
+                                   width="100%" role="grid" aria-describedby="example_info"
+                                   style="width: 100%;">
+                                <!-- Header Table -->
+                                <thead>
+                                <tr>
+                                    <th>id_</th>
+                                    <th>id_asset</th>
+                                    <th>Kode Spare Part</th>
+                                    <th>Kode Asset</th>
+                                    <th>Nama Spare Part </th>
+                                    <th>Vendor </th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Harga Beli</th>
+                                    <th>Garansi</th>
+                                    <th>Serial</th>
+                                    <th>Consume</th>
+                                    <th>Stok</th>
+                                    <th>Stok Akhir</th>
+                                </tr>
+                                </thead>
+                                <!-- Footer Table -->
+                            </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_3">
+                    <div class='box-body pad'>
+                        <div class="panel panel-default">
+                            <table id="tabelrpm" class="table table-striped table-bordered table-hover"  cellspacing="0"
+                                   width="100%" role="grid" aria-describedby="example_info"
+                                   style="width: 100%;">
+                                <!-- Header Table -->
+                                <thead>
+                                <tr>
+                                    <th>id_</th>
+                                    <th>id_asset</th>
+                                    <th>Kode Asset</th>
+                                    <th>Deskripsi PM</th>
+
+                                </tr>
+                                </thead>
+                                <!-- Footer Table -->
+                            </table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_4">
+                    <div class='box-body pad'>
+                        <div class="panel panel-default">
+                            <table id="taberdept" class="table table-striped table-bordered table-hover"  cellspacing="0"
+                                   width="100%" role="grid" aria-describedby="example_info"
+                                   style="width: 100%;">
+                                <!-- Header Table -->
+                                <thead>
+                                <tr>
+                                    <th>id_asset</th>
+                                    <th>serial</th>
+                                    <th>nama asset</th>
+
+                                </tr>
+                                </thead>
+                                <!-- Footer Table -->
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

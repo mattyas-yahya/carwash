@@ -1,0 +1,183 @@
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+<!-- Sidebar users panel -->
+<div class="users-panel">
+<div class="pull-left info">
+<a href="#"></a>
+</div>
+    </div>
+<!-- search form -->
+
+<!-- /.search form -->
+<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu" background-color="#3c8dbc" data-widget="tree" data-api="tree" data-accordion=0>
+<li class="header" ></li>
+
+<li class="active treeview">
+<a href="#">
+<i class="fa   fa-folder"></i> <span>Data Master</span>
+<span class="pull-right-container">
+<i class="fa fa-angle-left pull-right"></i>
+</span>
+</a>
+<ul class="treeview-menu" style="display: block" >
+  <li><a th:href="@{~/jenis_kendaraan}"><i class="fa fa-file-text-o"></i>Jenis Kendaraan</a></li>
+  <li><a th:href="@{~/pelanggan}"><i class="fa fa-file-text-o"></i>Member</a></li>
+  <li><a th:href="@{~/member}"><i class="fa fa-file-text-o"></i>New Member</a></li>
+
+
+</ul>
+</li>
+
+  <li class="active treeview">
+    <a href="#">
+      <i class="fa   fa-folder"></i> <span>Administration</span>
+      <span class="pull-right-container">
+<i class="fa fa-angle-left pull-right"></i>
+</span>
+    </a>
+    <ul class="treeview-menu" style="display: block" >
+      <li><a th:href="@{~/transaksi}"><i class="fa fa-file-text-o"></i>Transaksi</a></li>       
+    </ul>
+  </li>
+
+<!--  <li class="active treeview">-->
+<!--    <a href="#">-->
+<!--      <i class="fa   fa-folder"></i> <span>Project</span>-->
+<!--      <span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--    </a>-->
+<!--    <ul class="treeview-menu" style="display: block" >-->
+<!--      <li ><a th:href="@{~/project_detail}"><i class="fa fa-file-code-o"></i>  Project  </a></li>-->
+<!--    </ul>-->
+<!--  </li>-->
+
+  <li class="active treeview">
+    <a href="#">
+      <i class="fa   fa-folder"></i> <span>History</span>
+      <span class="pull-right-container">
+<i class="fa fa-angle-left pull-right"></i>
+</span>
+    </a>
+    <ul class="treeview-menu" style="display: block" >
+      <li ><a th:href="@{~/report_transaksi}"><i class="fa fa-file-code-o"></i> Laporan Transaksi</a></li>
+      <!-- <li ><a th:href="@{~/costbydate}"><i class="fa fa-file-code-o"></i> History Cost  </a></li> -->
+      <!-- <li ><a th:href="@{~/histori_jadwal}"><i class="fa fa-file-code-o"></i> History PM  </a></li>    </ul> -->
+  </li>
+
+
+
+<!--<li class="active treeview" background-color="#3c8dbc" >-->
+<!--<a href="#">-->
+<!--<i class="fa fa-folder"></i> <span>Operational Area</span>-->
+<!--<span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--</a>-->
+<!--<ul class="treeview-menu" style="display: block" >-->
+<!--<li class="active treeview" >-->
+<!--<a href="#">-->
+<!--<i class="fa fa-folder"></i> <span>Administration</span>-->
+<!--<span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--</a>-->
+<!--<ul class="treeview-menu" style="display: block" >-->
+<!--<li><a th:href="@{~/work_orders}"><i class="fa fa-file-text-o"></i>Work Order</a></li>-->
+<!--<li><a th:href="@{~/jadwal}"><i class="fa fa-calendar"></i>Schedule PM</a></li>-->
+<!--<li><a th:href="@{~/failur}"><i class="fa fa-file-text-o"></i>Aseet/ Part Failure</a></li>-->
+<!--<li><a th:href="@{~/takeover}"><i class="fa fa-file-text-o"></i>TakeOver</a></li>-->
+<!--&lt;!&ndash;  <li><a th:href="@{~/MtbfMttr}"><i class="fa fa-file-text-o"></i>Break Down</a></li>&ndash;&gt;-->
+<!--</ul>-->
+<!--</li>-->
+
+<!--  <li class="active treeview" >-->
+<!--    <a href="#">-->
+<!--      <i class="fa fa-folder"></i> <span> Jurnal Project</span>-->
+<!--      <span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--    </a>-->
+<!--    <ul class="treeview-menu" style="display: block" >-->
+<!--&lt;!&ndash;      <li ><a th:href="@{~/header_cst_pro}"><i class="fa fa-file-code-o"></i> Jurnal Project  </a></li>&ndash;&gt;-->
+<!--      <li ><a th:href="@{~/project_detail}"><i class="fa fa-file-code-o"></i>  Project  </a></li>-->
+
+<!--    </ul>-->
+<!--  </li>-->
+
+<!--  <li class="active treeview" >-->
+<!--<a href="#">-->
+<!--<i class="fa fa-folder"></i> <span>History</span>-->
+<!--<span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--</a>-->
+<!--<ul class="treeview-menu" style="display: block" >-->
+<!--<li ><a th:href="@{~/histori}"><i class="fa fa-file-code-o"></i> History Work Order   </a></li>-->
+<!--    <li ><a th:href="@{~/histori_cost}"><i class="fa fa-file-code-o"></i> History Cost  </a></li>-->
+<!--  <li ><a th:href="@{~/histori_jadwal}"><i class="fa fa-file-code-o"></i> History PM  </a></li>-->
+
+
+<!--</ul>-->
+<!--</li>-->
+
+<!--&lt;!&ndash;<li class="active treeview" >&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-folder"></i> <span>Cost</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="pull-right-container">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-angle-left pull-right"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="treeview-menu" style="display: block" >&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a th:href="@{~/t_biaya}"><i class="fa fa-money"></i>Biaya</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<li><a th:href="@{~/moveout}"><i class="fa fa-money"></i>Moveout Spare Part   </a></li>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<li class="active treeview" >&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-folder"></i> <span>Report</span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="pull-right-container">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="fa fa-angle-left pull-right"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="treeview-menu" style="display: block" >&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a th:href="@{~/report}"><i class="fa fa-file-text-o"></i>Report</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--</ul>-->
+<!--</li>-->
+
+  <bottom>
+  <a type="button" class="btn btn-block btn-danger " th:href="@{~/logout}"><i class=" glyphicon glyphicon-off"></i></a>
+  </bottom>
+
+<!--<li class="active treeview" >-->
+<!--<a href="#">-->
+<!--<i class="fa    fa-users-plus"></i> <span>Users Area</span>-->
+<!--<span class="pull-right-container">-->
+<!--<i class="fa fa-angle-left pull-right"></i>-->
+<!--</span>-->
+<!--</a>-->
+<!--<ul class="treeview-menu" style="display: block" >-->
+<!--<li class="active"><a th:href="@{~/service_request}"><i class="fa fa-cubes"></i> Service Request</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+</ul>
+
+<div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+
+
+
+</section>
+<!-- /.sidebar -->

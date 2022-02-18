@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="utf-8"/>
+    <title>Work Order</title>
+</head>
+<body onload="loading2()" class="hold-transition skin-blue sidebar-mini">
+<ol class="breadcrumb">
+    <h3 class="active">Data History Cost</h3>
+</ol>
+<section layout:fragment="header">
+
+
+</section>
+
+<div layout:fragment="content">
+
+    <div class="col-md-12">
+        <div >
+            <div >
+
+                <div >
+
+                    <div >
+                        <div class="col-md-4">
+                            <table width="30%" style="width: 10%;">
+                                <tr>Start Date</tr>
+                                <tr><input type="text" width="10%" class="form-control" required="true"  id="min" name="min" placeholder="Start Date"/></tr>
+                               <tr>End Date</tr>
+                                <tr><input type="text" width="10%" class="form-control" required="true"  id="max" name="max" placeholder="End Date"/></tr>
+                                <tr></tr>
+                            </table>
+                        </div>
+                        <div class="panel panel-default">
+
+                            <table id="tabelhisbiy" class="table table-striped table-bordered table-hover" cellspacing="0"
+                                   width="100%" role="grid" aria-describedby="example_info"
+                                   style="width: 100%;">
+                                <!-- Header Table -->
+                                <thead>
+                                <tr>
+                                    <th>Cost Id</th>
+                                    <th>Group</th>
+                                    <th>Wo Id</th>
+                                    <th>Work Order Code</th>
+                                    <th>Id Cost Voucher</th>
+                                    <th>Cost Reference</th>
+                                    <th>Labour</th>
+                                    <th>Cost</th>
+                                    <th>Working Date</th>
+                                    <th>Kode Spare Part</th>
+                                    <th>Jumlah</th>
+                                    <th>Harga</th>
+                                    <th>Total</th>
+                                    <th>Deskription</th>
+
+                                </tr>
+                                </thead>
+                                <!-- Footer Table -->
+                            </table>
+
+                            <input type=hidden id="ac" name="ac" value=""/>
+                            <input type=hidden id="bc" name="bc" value=""/>
+                            <input type=hidden id="cc" name="cc" value=""/>
+                            <input type=hidden id="dc" name="dc" value=""/>
+                            <input type=hidden id="ec" name="ec" value=""/>
+                            <input type=hidden id="fc" name="fc" value=""/>
+                            <input type=hidden id="gc" name="gc" value=""/>
+                            <input type=hidden id="hc" name="hc" value=""/>
+                            <input type=hidden id="ic" name="ic" value=""/>
+                            <input type=hidden id="jc" name="jc" value=""/>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="btn btn-warning btn-lg" style="margin:auto;display:block"  type="button" ><b class="glyphicon glyphicon-download-alt"></b> Export To XLS</button>
+        </div>
+</div>
+</body>
+</html>
+<script>
+
+
+</script>

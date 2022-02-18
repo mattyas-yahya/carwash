@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="cmms">
+  <database-model serializer="dbm" dbms="UNKNOWN" family-id="UNKNOWN" format-version="4.23">
+    <root id="1"/>
+    <database id="2" parent="1" name="bi"/>
+    <database id="3" parent="1" name="bookstore"/>
+    <database id="4" parent="1" name="cmms">
+      <Current>1</Current>
+    </database>
+    <database id="5" parent="1" name="dosen"/>
+    <database id="6" parent="1" name="erp"/>
+    <database id="7" parent="1" name="hr"/>
+    <database id="8" parent="1" name="ids_akademik"/>
+    <database id="9" parent="1" name="information_schema"/>
+    <database id="10" parent="1" name="mysql"/>
+    <database id="11" parent="1" name="new_schema"/>
+    <database id="12" parent="1" name="oee"/>
+    <database id="13" parent="1" name="pos"/>
+    <database id="14" parent="1" name="rmi"/>
+    <database id="15" parent="1" name="salary"/>
+    <database id="16" parent="1" name="spring-security-tutorial"/>
+    <database id="17" parent="1" name="spring_adminlte"/>
+    <database id="18" parent="1" name="test"/>
+    <schema id="19" parent="4">
+      <Current>1</Current>
+    </schema>
+    <table id="20" parent="19" name="asset"/>
+    <table id="21" parent="19" name="asset_aud"/>
+    <table id="22" parent="19" name="aud_wo"/>
+    <table id="23" parent="19" name="authorities"/>
+    <table id="24" parent="19" name="biaya"/>
+    <table id="25" parent="19" name="departemen"/>
+    <table id="26" parent="19" name="departemen_aud"/>
+    <table id="27" parent="19" name="jadwal"/>
+    <table id="28" parent="19" name="preventive_maintenance"/>
+    <table id="29" parent="19" name="preventive_maintenance_aud"/>
+    <table id="30" parent="19" name="revinfo"/>
+    <table id="31" parent="19" name="role"/>
+    <table id="32" parent="19" name="spare_part"/>
+    <table id="33" parent="19" name="user"/>
+    <table id="34" parent="19" name="user_role"/>
+    <table id="35" parent="19" name="users"/>
+    <table id="36" parent="19" name="work_order"/>
+    <table id="37" parent="19" name="work_order_aud"/>
+    <column id="38" parent="20" name="id_asset">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="20" name="grup">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="40" parent="20" name="kode_asset">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="41" parent="20" name="model">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="42" parent="20" name="nama_asset">
+      <Position>5</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="43" parent="20" name="serial">
+      <Position>6</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="20" name="tgl_beli_asset">
+      <Position>7</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="45" parent="20" name="lokasi">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="46" parent="20" name="PRIMARY">
+      <ColNames>id_asset</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="20" name="PRIMARY">
+      <ColNames>id_asset</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="21" name="id_asset">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="49" parent="21" name="rev">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="21" name="revtype">
+      <Position>3</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+    </column>
+    <column id="51" parent="21" name="grup">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="52" parent="21" name="kode_asset">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="53" parent="21" name="lokasi">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="54" parent="21" name="model">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="55" parent="21" name="nama_asset">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="56" parent="21" name="serial">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="57" parent="21" name="tgl_beli_asset">
+      <Position>10</Position>
+      <DataType>DATE(10)|91s</DataType>
+    </column>
+    <index id="58" parent="21" name="PRIMARY">
+      <ColNames>id_asset
+rev</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="59" parent="21" name="FKk2y69n6xuwan2iwwis54utbke">
+      <ColNames>rev</ColNames>
+    </index>
+    <key id="60" parent="21" name="PRIMARY">
+      <ColNames>id_asset
+rev</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="61" parent="21" name="FKk2y69n6xuwan2iwwis54utbke">
+      <ColNames>rev</ColNames>
+      <RefTableName>revinfo</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>rev</RefColNames>
+    </foreign-key>
+    <column id="62" parent="22" name="id_aud_wo">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="63" parent="22" name="action">
+      <Position>2</Position>
+      <DataType>VARCHAR(9000)|12s</DataType>
+    </column>
+    <column id="64" parent="22" name="end">
+      <Position>3</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="65" parent="22" name="jenis_pekerjaan">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="66" parent="22" name="kode_asset">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="67" parent="22" name="kode_wo">
+      <Position>6</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="68" parent="22" name="lokasi">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="69" parent="22" name="nama_dept">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="70" parent="22" name="prioritas">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="71" parent="22" name="start">
+      <Position>10</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="72" parent="22" name="status_pekerjaan">
+      <Position>11</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="73" parent="22" name="title">
+      <Position>12</Position>
+      <DataType>LONGTEXT(max)|-1s</DataType>
+    </column>
+    <column id="74" parent="22" name="id_asset">
+      <Position>13</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="75" parent="22" name="id_dept">
+      <Position>14</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="76" parent="22" name="id_pm">
+      <Position>15</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="77" parent="22" name="PRIMARY">
+      <ColNames>id_aud_wo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="78" parent="22" name="FKb56psv2ndh494jmxkf2y7v9v7">
+      <ColNames>id_asset</ColNames>
+    </index>
+    <index id="79" parent="22" name="FKjeisdp6tybpspkilhut137qxo">
+      <ColNames>id_dept</ColNames>
+    </index>
+    <index id="80" parent="22" name="FK6e0py3c1liycnebwx0eawmcef">
+      <ColNames>id_pm</ColNames>
+    </index>
+    <key id="81" parent="22" name="PRIMARY">
+      <ColNames>id_aud_wo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="82" parent="22" name="FKb56psv2ndh494jmxkf2y7v9v7">
+      <ColNames>id_asset</ColNames>
+      <RefTableName>asset</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_asset</RefColNames>
+    </foreign-key>
+    <foreign-key id="83" parent="22" name="FKjeisdp6tybpspkilhut137qxo">
+      <ColNames>id_dept</ColNames>
+      <RefTableName>departemen</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_dept</RefColNames>
+    </foreign-key>
+    <foreign-key id="84" parent="22" name="FK6e0py3c1liycnebwx0eawmcef">
+      <ColNames>id_pm</ColNames>
+      <RefTableName>preventive_maintenance</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_pm</RefColNames>
+    </foreign-key>
+    <column id="85" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="86" parent="23" name="authority">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="87" parent="23" name="username">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="88" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="24" name="id_biaya">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="91" parent="24" name="deskripsi">
+      <Position>2</Position>
+      <DataType>LONGTEXT(max)|-1s</DataType>
+    </column>
+    <column id="92" parent="24" name="grup">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="93" parent="24" name="kode_wo">
+      <Position>4</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="94" parent="24" name="id_wo">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="95" parent="24" name="PRIMARY">
+      <ColNames>id_biaya</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="96" parent="24" name="FKkhvc1ya4189sa94iare82sq9t">
+      <ColNames>id_wo</ColNames>
+    </index>
+    <key id="97" parent="24" name="PRIMARY">
+      <ColNames>id_biaya</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="98" parent="24" name="FKkhvc1ya4189sa94iare82sq9t">
+      <ColNames>id_wo</ColNames>
+      <RefTableName>work_order</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_wo</RefColNames>
+    </foreign-key>
+    <column id="99" parent="25" name="id_dept">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="100" parent="25" name="kode_dept">
+      <Position>2</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="101" parent="25" name="nama_dept">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="102" parent="25" name="PRIMARY">
+      <ColNames>id_dept</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="103" parent="25" name="PRIMARY">
+      <ColNames>id_dept</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="104" parent="26" name="id_dept">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="105" parent="26" name="rev">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="26" name="revtype">
+      <Position>3</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+    </column>
+    <column id="107" parent="26" name="kode_dept">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="108" parent="26" name="nama_dept">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="109" parent="26" name="PRIMARY">
+      <ColNames>id_dept
+rev</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="110" parent="26" name="FK8xl7j9qhkqhn3w693p7uddsne">
+      <ColNames>rev</ColNames>
+    </index>
+    <key id="111" parent="26" name="PRIMARY">
+      <ColNames>id_dept
+rev</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="112" parent="26" name="FK8xl7j9qhkqhn3w693p7uddsne">
+      <ColNames>rev</ColNames>
+      <RefTableName>revinfo</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>rev</RefColNames>
+    </foreign-key>
+    <column id="113" parent="27" name="id_dept">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="114" parent="27" name="end">
+      <Position>2</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="115" parent="27" name="start">
+      <Position>3</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="116" parent="27" name="title">
+      <Position>4</Position>
+      <DataType>LONGTEXT(max)|-1s</DataType>
+    </column>
+    <index id="117" parent="27" name="PRIMARY">
+      <ColNames>id_dept</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="118" parent="27" name="PRIMARY">
+      <ColNames>id_dept</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="119" parent="28" name="id_pm">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="120" parent="28" name="deskripsi">
+      <Position>2</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="121" parent="28" name="kode_asset">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="122" parent="28" name="id_asset">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="123" parent="28" name="PRIMARY">
+      <ColNames>id_pm</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="124" parent="28" name="FKeds4fgef3t62c9gld3s9fykfh">
+      <ColNames>id_asset</ColNames>
+    </index>
+    <key id="125" parent="28" name="PRIMARY">
+      <ColNames>id_pm</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="126" parent="28" name="FKeds4fgef3t62c9gld3s9fykfh">
+      <ColNames>id_asset</ColNames>
+      <RefTableName>asset</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_asset</RefColNames>
+    </foreign-key>
+    <column id="127" parent="29" name="id_pm">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="128" parent="29" name="rev">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="29" name="revtype">
+      <Position>3</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+    </column>
+    <column id="130" parent="29" name="deskripsi">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="131" parent="29" name="kode_asset">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="132" parent="29" name="id_asset">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="133" parent="29" name="PRIMARY">
+      <ColNames>id_pm
+rev</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="134" parent="29" name="FKnijkdb2fpuuqxtuycrf2x3xnc">
+      <ColNames>rev</ColNames>
+    </index>
+    <key id="135" parent="29" name="PRIMARY">
+      <ColNames>id_pm
+rev</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="136" parent="29" name="FKnijkdb2fpuuqxtuycrf2x3xnc">
+      <ColNames>rev</ColNames>
+      <RefTableName>revinfo</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>rev</RefColNames>
+    </foreign-key>
+    <column id="137" parent="30" name="rev">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="138" parent="30" name="revtstmp">
+      <Position>2</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <index id="139" parent="30" name="PRIMARY">
+      <ColNames>rev</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="140" parent="30" name="PRIMARY">
+      <ColNames>rev</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="141" parent="31" name="role_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="142" parent="31" name="role">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="143" parent="31" name="PRIMARY">
+      <ColNames>role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="144" parent="31" name="PRIMARY">
+      <ColNames>role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="145" parent="32" name="id_spare_part">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="146" parent="32" name="kode_asset">
+      <Position>2</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="147" parent="32" name="kode_spare_part">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="148" parent="32" name="nama_spare_part">
+      <Position>4</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="149" parent="32" name="tgl_beli_spare">
+      <Position>5</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="150" parent="32" name="vendor">
+      <Position>6</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="151" parent="32" name="id_asset">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="152" parent="32" name="PRIMARY">
+      <ColNames>id_spare_part</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="153" parent="32" name="FK3l80brreuab2ev83kg8q29pwl">
+      <ColNames>id_asset</ColNames>
+    </index>
+    <key id="154" parent="32" name="PRIMARY">
+      <ColNames>id_spare_part</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="155" parent="32" name="FK3l80brreuab2ev83kg8q29pwl">
+      <ColNames>id_asset</ColNames>
+      <RefTableName>asset</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_asset</RefColNames>
+    </foreign-key>
+    <column id="156" parent="33" name="user_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="157" parent="33" name="active">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <column id="158" parent="33" name="email">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="159" parent="33" name="last_name">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="160" parent="33" name="name">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="161" parent="33" name="password">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="162" parent="33" name="roles">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="163" parent="33" name="role">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="164" parent="33" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="165" parent="33" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="166" parent="34" name="user_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="167" parent="34" name="role_id">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="168" parent="34" name="PRIMARY">
+      <ColNames>user_id
+role_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="169" parent="34" name="FKa68196081fvovjhkek5m97n3y">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="170" parent="34" name="PRIMARY">
+      <ColNames>user_id
+role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="171" parent="34" name="FK859n2jvi8ivhui0rl0esws6o">
+      <ColNames>user_id</ColNames>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="172" parent="34" name="FKa68196081fvovjhkek5m97n3y">
+      <ColNames>role_id</ColNames>
+      <RefTableName>role</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>role_id</RefColNames>
+    </foreign-key>
+    <column id="173" parent="35" name="user_id">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="174" parent="35" name="password">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="175" parent="35" name="username">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="176" parent="35" name="enabled">
+      <Position>4</Position>
+      <DataType>BIT(1)|-7s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="177" parent="35" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="178" parent="35" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="179" parent="36" name="id_wo">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="180" parent="36" name="action">
+      <Position>2</Position>
+      <DataType>VARCHAR(9000)|12s</DataType>
+    </column>
+    <column id="181" parent="36" name="end">
+      <Position>3</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="182" parent="36" name="issue">
+      <Position>4</Position>
+      <DataType>LONGTEXT(max)|-1s</DataType>
+    </column>
+    <column id="183" parent="36" name="jenis_pekerjaan">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="184" parent="36" name="kode_asset">
+      <Position>6</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="185" parent="36" name="kode_wo">
+      <Position>7</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="186" parent="36" name="lokasi">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="187" parent="36" name="nama_dept">
+      <Position>9</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="188" parent="36" name="prioritas">
+      <Position>10</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="189" parent="36" name="start">
+      <Position>11</Position>
+      <DataType>DATE(10)|91s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="190" parent="36" name="status_pekerjaan">
+      <Position>12</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="191" parent="36" name="title">
+      <Position>13</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="192" parent="36" name="id_asset">
+      <Position>14</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="193" parent="36" name="id_dept">
+      <Position>15</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="194" parent="36" name="id_pm">
+      <Position>16</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="195" parent="36" name="PRIMARY">
+      <ColNames>id_wo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="196" parent="36" name="FK2yqu95lb5849da6xx652knq6v">
+      <ColNames>id_asset</ColNames>
+    </index>
+    <index id="197" parent="36" name="FKf5loajhoo391ondyevswfk0ns">
+      <ColNames>id_dept</ColNames>
+    </index>
+    <index id="198" parent="36" name="FKfapf86k6lhrhon2dipjpaacxe">
+      <ColNames>id_pm</ColNames>
+    </index>
+    <key id="199" parent="36" name="PRIMARY">
+      <ColNames>id_wo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="200" parent="36" name="FK2yqu95lb5849da6xx652knq6v">
+      <ColNames>id_asset</ColNames>
+      <RefTableName>asset</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_asset</RefColNames>
+    </foreign-key>
+    <foreign-key id="201" parent="36" name="FKf5loajhoo391ondyevswfk0ns">
+      <ColNames>id_dept</ColNames>
+      <RefTableName>departemen</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_dept</RefColNames>
+    </foreign-key>
+    <foreign-key id="202" parent="36" name="FKfapf86k6lhrhon2dipjpaacxe">
+      <ColNames>id_pm</ColNames>
+      <RefTableName>preventive_maintenance</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>id_pm</RefColNames>
+    </foreign-key>
+    <column id="203" parent="37" name="id_wo">
+      <Position>1</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="204" parent="37" name="rev">
+      <Position>2</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="205" parent="37" name="revtype">
+      <Position>3</Position>
+      <DataType>TINYINT(3)|-6s</DataType>
+    </column>
+    <column id="206" parent="37" name="action">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="207" parent="37" name="deskripsi">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="208" parent="37" name="issue">
+      <Position>6</Position>
+      <DataType>LONGTEXT(max)|-1s</DataType>
+    </column>
+    <column id="209" parent="37" name="jenis_pekerjaan">
+      <Position>7</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="210" parent="37" name="kode_asset">
+      <Position>8</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="211" parent="37" name="kode_wo">
+      <Position>9</Position>
+      <DataType>BIGINT(19)|-5s</DataType>
+    </column>
+    <column id="212" parent="37" name="lokasi">
+      <Position>10</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="213" parent="37" name="nama_dept">
+      <Position>11</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="214" parent="37" name="prioritas">
+      <Position>12</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="215" parent="37" name="status_pekerjaan">
+      <Position>13</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="216" parent="37" name="tgl_pengerjaan">
+      <Position>14</Position>
+      <DataType>DATE(10)|91s</DataType>
+    </column>
+    <column id="217" parent="37" name="id_asset">
+      <Position>15</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="218" parent="37" name="id_dept">
+      <Position>16</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="219" parent="37" name="id_pm">
+      <Position>17</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="220" parent="37" name="PRIMARY">
+      <ColNames>id_wo
+rev</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="221" parent="37" name="FKtj2sgb5dhjrc6mrsoynpgd2c6">
+      <ColNames>rev</ColNames>
+    </index>
+    <key id="222" parent="37" name="PRIMARY">
+      <ColNames>id_wo
+rev</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="223" parent="37" name="FKtj2sgb5dhjrc6mrsoynpgd2c6">
+      <ColNames>rev</ColNames>
+      <RefTableName>revinfo</RefTableName>
+      <RefKeyName>PRIMARY</RefKeyName>
+      <RefColNames>rev</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

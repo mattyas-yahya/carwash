@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8" />
+</head>
+<body >
+<section layout:fragment="header">
+  <h1>
+    Dashboard
+    <small>Control panel</small>
+  </h1>
+  <iframe
+  src="http://localhost:3000/public/dashboard/687222e9-2d7a-4ab6-bc88-b398122cfa0d"
+  frameborder="0"
+  width="1500"
+  height="1600"
+  allowtransparency
+></iframe>
+
+</body>
+</html>
+<script type="text/javascript">
+$("#tabtwo").dataTable();
+
+anychart.data.loadJsonFile('http://localhost:1110/sum_biaya', function (data)
+{
+var chart = anychart.bar(data);
+chart.title('Summary perbulan');
+chart.container('container_dt');
+chart.draw();
+});
+
+anychart.data.loadJsonFile('http://localhost:1110/SumCostByMonth', function (data)
+{
+var chart = anychart.column(data);
+chart.title('Pivot Biaya perbulan');
+chart.container('container_dt1');
+chart.draw();
+});
+
+
+</script>

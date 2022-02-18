@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title> Account</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<h2>
+Jenis Kendaraan
+<small>Form Master</small>
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Jenis Kendaraan</li>
+</ol>
+</section>
+<div layout:fragment="content">
+<div class="col-md-12">
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" id="jkoverview" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" id="jkgeneral" data-toggle="tab">General</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<button class="btn btn-info btn-lg" id="jkrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+<button class="btn btn-warning btn-lg" id="jkedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+<button class="btn btn-success btn-lg" id="jkadd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+
+<div class="panel panel-default">
+<table id="tabel_jenis_kendaraan" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id</th>
+<th >Jenis Kendaraan</th>
+<th>merek</th>
+<th>biaya</th>
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+
+
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+<div id="info"></div>
+<form data-toggle="validator" name ="form_jenis_kendaraan" id ="form_jenis_kendaraan" role="form" th:object="${jenis_kendaraan}"  method="post">
+
+<div class="col-md-12">
+<table class="table table-striped table-bordered table-hover" width="220%">
+<h2>Detail Information</h2>
+<tr hidden>
+<td> <div class="form-group" >
+<label for="nama">id</label>
+<input type="text" class="form-control" name="id_jenis_kendaraan" id="id_jenis_kendaraan" readonly />
+</div>
+</td>
+</tr>
+<tr>
+<td>
+    <div class="form-group">
+    <label for="nama">jenis Kendaraan</label>
+    <div class="input-group">
+    <div class="input-group-addon">
+    <i class="fa fa-id-card"></i>
+    </div>
+    <select id="jenis_kendaraan" name="jenis_kendaraan" class="form-control" required="true">
+        <option value="motor">motor</option>
+        <option value="motor_besar">motor besar</option>
+        <option value="mobil_kecil">mobil kecil</option>
+        <option value="mobil_besar">mobil besar</option>
+      </select>
+    </div>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td> <div class="form-group" >
+    <label for="nama">merek</label>
+    <input type="text" class="form-control" name="merek" id="merek"  />
+    </div>
+    </td>
+    </tr>
+<tr>
+<td>
+<div class="form-group">
+<label for="nama">biaya</label>
+<input type="text" required="true" class="form-control"  id="biaya" name="biaya" />
+</div>
+</td>
+
+</tr>
+
+
+</table>
+
+
+
+</div>
+
+<center>
+    <button class="btn btn-warning btn-lg" type="submit" name="jk1"  id="jk1" ><b class="glyphicon glyphicon-floppy-disk"></b> Save</button>
+</center>
+</form>        </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+
+<script >
+$('#purchase_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$("#simpan_asset").click(function (event)
+{
+//event.stopPropagation()
+//  event.preventDefault()
+//return false;
+})
+$("#edit_asset").hide();
+$("#alertmu").fadeTo(2000, 500).slideUp(500, function()
+{
+$("#alertmu").slideUp(500);
+});
+$("#summary").hide();
+</script>

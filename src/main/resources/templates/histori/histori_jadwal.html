@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="utf-8"/>
+    <title>Data History PM</title>
+</head>
+<body onload="loading2()" class="hold-transition skin-blue sidebar-mini">
+<ol class="breadcrumb">
+    <h3 class="active">Data History PM</h3>
+</ol>
+<section layout:fragment="header">
+
+
+</section>
+
+<div layout:fragment="content">
+
+    <div class="col-md-12">
+        <div >
+            <div >
+
+                <div >
+
+                    <div >
+                        <div class="col-md-4">
+                            <table width="30%" style="width: 10%;">
+                                <tr>Start Date</tr>
+                                <tr><input type="text" width="10%" class="form-control" required="true"  id="min" name="min" placeholder="Start Date"/></tr>
+                               <tr>End Date</tr>
+                                <tr><input type="text" width="10%" class="form-control" required="true"  id="max" name="max" placeholder="End Date"/></tr>
+                                <tr></tr>
+                            </table>
+                        </div>
+                      <div class="panel panel-default">
+                        <table aria-describedby="example_info" cellspacing="0"
+                               class="table table-striped table-bordered table-hover"
+                               id="tabel_log_calendar" role="grid" style="width: 100%;"
+                               width="100%">
+                          <!-- Header Table -->
+                          <thead>
+                          <tr>
+                            <th>id_jadwal</th>
+                            <th>id_pm</th>
+                            <th>start</th>
+                            <th>end</th>
+                            <th>kode_pm</th>
+                            <th>title</th>
+                            <th>status</th>
+
+                          </tr>
+                          </thead>
+                          <!-- Footer Table -->
+                        </table>
+                        <input id="b" name="b" type=hidden value=""/>
+                        <input id="c" name="c" type=hidden value=""/>
+                        <input id="d" name="d" type=hidden value=""/>
+                        <input id="e" name="e" type=hidden value=""/>
+                        <input id="f" name="f" type=hidden value=""/>
+                        <input id="g" name="g" type=hidden value=""/>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="btn btn-warning btn-lg" style="margin:auto;display:block"  type="button" ><b class="glyphicon glyphicon-download-alt"></b> Export To XLS</button>
+        </div>
+</div>
+</body>
+</html>
+<script>
+
+
+</script>

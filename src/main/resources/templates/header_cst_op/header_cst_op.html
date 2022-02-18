@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>voucher Cost Operational</title>
+
+</head>
+<body  class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<h2>
+  voucher Cost Operational
+<small>Form Cost Operational</small>
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Data </li>
+</ol>
+</section>
+
+
+<div layout:fragment="content">
+<div class="col-md-12">
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" data-toggle="tab">General</a></li>
+</ul>
+<!--<span th:replace="moveout/modal_spare"/>-->
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div class="panel panel-default">
+<table id="tabelhco" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id_header_cst_op</th>
+<th>tanggal</th>
+<th>reference</th>
+<th>Description</th>
+  <th>Status</th>
+</tr>
+</thead>
+<!-- Footer Table -->
+</table>
+
+<input type=hidden id="a" name="a" value=""/>
+<input type=hidden id="b" name="b" value=""/>
+<input type=hidden id="c" name="c" value=""/>
+
+</div>
+</div>
+
+</div>
+<div class="tab-pane" id="tab_2">
+<form id="dummy"  data-toggle="validator" role="form" th:object="${header_cst_op}" th:action="@{/hco_komit}" method="post">
+<div class="col-md-12">
+<div class='box-header'>
+<div class="box-body">
+
+<div class="col-md-8">
+
+<table class="table table-striped table-bordered table-hover" >
+<tr hidden>
+<td>
+<div class="form-group" hidden>
+<label for="nama">id_header_cst_op</label>
+<input class="form-control" id="id_header_cst_op" readonly
+       th:field="*{id_header_cst_op}" type="text"/>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class="form-group" >
+<label for="nama">date</label>
+<input class="form-control" id="date" th:field="*{date}" type="text" readonly />
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="form-group" >
+<label for="nama">reference</label>
+<input class="form-control" id="copreference" th:field="*{reference}" type="text" readonly />
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="form-group" >
+<label for="nama">descrip</label>
+<input class="form-control" id="descrip" th:field="*{descrip}" type="text"  />
+</div>
+</td>
+  <tr>
+  <td>
+    <div class="form-group">
+      <label for="nama"> Status</label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-id-card"></i>
+        </div>
+        <select class="form-control" id="status"
+                required="true" th:field="*{status}">
+          <option th:each="type : ${header_cst_op}"
+                  th:text="Open"
+                  th:value="'Open'">Open
+          </option>
+          <option th:each="type : ${header_cst_op}"
+                  th:text="Close"
+                  th:value="'Close'">Close
+          </option>
+        </select>
+      </div>
+    </div>
+  </td>
+</tr>
+</tr>
+
+
+
+
+</table>
+
+</div>
+
+</div>
+</div>
+</div>
+<!--<button class="btn btn-default btn-lg"  type="submit" value="break_simpan" name="break_action">save</button>-->
+<button class="btn btn-warning btn-lg" style="margin:auto;display:block"  type="submit" value="hco_simpan" name="hco_action" ><b class="glyphicon glyphicon-download-alt"></b> Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+
+
+</script>
+</body>
+
+</html>

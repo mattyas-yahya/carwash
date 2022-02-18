@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Onhand Inventory</title>
+
+</head>
+<body >
+<section layout:fragment="header">
+<h2>
+Data Onhand Inventory
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Data Items</li>
+</ol>
+</section>
+<div layout:fragment="content">
+<div class="col-md-15">
+<div class="box">
+<div class="box-header">
+
+<div class="box-tools pull-right">
+<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+</button>
+<div class="btn-group">
+<button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+<i class="fa fa-wrench"></i></button>
+<ul class="dropdown-menu" role="menu">
+
+<li class="divider"></li>
+<li>
+</li>
+</ul>
+</div>
+<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+</div>
+</div>
+<div class="box-body">
+
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" data-toggle="tab">All Inventory</a></li>
+<li ><a href="#tab_2" data-toggle="tab">Stock Card</a></li>
+</ul>
+<div class="tab-content">
+
+<span th:replace="Onhand_Inventory/modal_item"/>
+
+
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div class="panel panel-default">
+<table id="form_onhandinv" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="50%" role="grid" aria-describedby="example_info"
+style="width: 50%;">
+<tr>
+<div class="form-group">
+<label for="nama"> Start Date</label>
+<input type="text" required="true" class="form-control" id="start_date" name="start_date" placeholder=" "/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama"> end_date</label>
+<input type="text" required="true"  class="form-control" id="end_date" name="end_date" placeholder=" "/>
+</div>
+</tr>
+<tr>
+</tr>
+</table>
+<table id="tabel_Onhand_inventory" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+  <input type='button' class="btn btn-danger btn-lg" id="btn_search"  value="Search">
+  <button class="btn btn-info btn-lg" id="ohrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+<button class="btn btn-warning btn-lg" id="ohedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+<button class="btn btn-success btn-lg" id="ohadd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+
+<!-- Header Table -->
+<thead>
+<tr>
+<th>idstok_card</th>
+<th>Date</th>
+<th>Inventory Code</th>
+<th>price</th>
+<th> Begin Balance </th>
+<th>Transfer</th>
+<th> Consume </th>
+<th> Adjustment</th>
+<th> End Balance</th>
+<th> Note</th>
+</tr>
+</thead>
+<tfoot>
+<th colspan="4" style="text-align:left,font-size:90000000px"></th>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+<div class='box-body pad'>
+<div class="panel panel-default">
+<table  class="table table-striped table-bordered table-hover"  cellspacing="0"
+  width="50%" role="grid" aria-describedby="example_info"
+  style="width: 50%;">
+<tr>
+<div class="form-group">
+<label for="nama"> Start Date</label>
+<input type="text" required="true" class="form-control" id="start_date" name="start_date" placeholder=" "/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama"> end_date</label>
+<input type="text" required="true"  class="form-control" id="end_date" name="end_date" placeholder=" "/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama"> Item Code</label>
+<input type="text" required="true"  class="form-control" id="kode_inventory" name="kode_inventory" placeholder=" "/>
+</div>
+</tr>
+<tr>
+<input type='button' class="btn btn-warning btn-lg" id="btn_filter" value="Search">
+</tr>
+</table>
+<table id="tabel_stock_card" class="table table-striped table-bordered table-hover"  cellspacing="0"
+ width="100%" role="grid" aria-describedby="example_info"
+ style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id</th>
+<th>Date</th>
+<th>Inventory Code</th>
+<th> Begin Balance </th>
+<th>Transfer</th>
+<th> Consume </th>
+<th> Adjustment</th>
+<th> End Balance</th>
+<th> note</th>
+
+</tr>
+</thead>
+<tfoot>
+<th colspan="4" style="text-align:left,font-size:90000000px"></th>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab_3">
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+<script >
+$('#start_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$('#end_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+
+</script>

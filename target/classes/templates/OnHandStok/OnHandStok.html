@@ -1,0 +1,243 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"-->
+<!--      layout:decorate="layout">-->
+<!--<head>-->
+<!--  <meta charset="utf-8" />-->
+<!--  <title>Data Asset</title>-->
+
+<!--</head>-->
+<!--<body class="hold-transition skin-blue sidebar-mini">-->
+<!--<section layout:fragment="header">-->
+<!--  <h2>-->
+<!--    On Hand Stok-->
+<!--    <small>Form Stok Barang</small>-->
+<!--  </h2>-->
+
+<!--</section>-->
+<!--<div layout:fragment="content">-->
+<!--  <div class="col-md-12">-->
+<!--    <div >-->
+<!--      <div>-->
+
+
+<!--      </div>-->
+<!--      <div class="box-body">-->
+
+<!--        <div class="nav-tabs-custom">-->
+<!--          <ul class="nav nav-tabs">-->
+<!--            <li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>-->
+<!--            <li ><a href="#tab_2" data-toggle="tab">General</a></li>-->
+<!--            <li ><a id="tab_3xxx" href="#tab_3" data-toggle="tab">History Maintenance</a></li>-->
+<!--          </ul>-->
+<!--          <div class="tab-content">-->
+<!--&lt;!&ndash;            <span th:replace="Spare_part/modal_safety"/>&ndash;&gt;-->
+<!--            <span th:replace="Modal_w/modal_wo_asset"/>-->
+
+
+<!--            <div class="tab-pane active" id="tab_1">-->
+
+<!--              <div class='box-body pad'>-->
+<!--                <div class="panel panel-default">-->
+<!--                  <table id="tabelohh" class="table table-striped table-bordered table-hover"  cellspacing="0"-->
+<!--                         width="100%" role="grid" aria-describedby="example_info"-->
+<!--                         style="width: 100%;">-->
+<!--                    &lt;!&ndash; Header Table &ndash;&gt;-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                      <th>id_OnHandStok</th>-->
+<!--                      <th>id_asset</th>-->
+<!--                      <th>asset_code </th>-->
+<!--                      <th> asset_name </th>-->
+<!--                      <th>begin_balance</th>-->
+<!--                      <th> transfer</th>-->
+<!--                      <th>consume</th>-->
+<!--                      <th>adjustment</th>-->
+<!--                      <th>end_balance</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+
+<!--                    &lt;!&ndash; Footer Table &ndash;&gt;-->
+<!--                  </table>-->
+
+<!--                  &lt;!&ndash;<input type=hidden id="av" name="av" value=""/>&ndash;&gt;-->
+<!--                  <input type=hidden id="bv" name="bv" value=""/>-->
+<!--                  <input type=hidden id="cv" name="cv" value=""/>-->
+<!--                  <input type=hidden id="dv" name="dv" value=""/>-->
+<!--                  <input type=hidden id="ev" name="ev" value=""/>-->
+<!--                  <input type=hidden id="fv" name="fv" value=""/>-->
+<!--                  <input type=hidden id="gv" name="gv" value=""/>-->
+<!--                  <input type=hidden id="hv" name="hv" value=""/>-->
+<!--                  <input type=hidden id="iv" name="iv" value=""/>-->
+<!--                  </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="tab-pane" id="tab_2">-->
+<!--              <form data-toggle="validator" id ="form_OnHandStok" role="form" th:object="${OnHandStok}" th:action="@{/oh_komit}" method="post">-->
+<!--                <div id="info"></div>-->
+
+<!--                <div class="col-md-12">-->
+<!--                  <div class='box-header'>-->
+<!--                    <div class="box-body">-->
+
+<!--                      <div class="col-md-12">-->
+<!--                        <table class="table table-striped table-bordered table-hover" width="220%">-->
+<!--                          <h2>Detail Information</h2>-->
+<!--                          <tr >-->
+<!--                            <td> <div class="form-group" >-->
+<!--                              <label for="nama">id_OnHandStok</label>-->
+<!--                              <input type="text" class="form-control" th:field="*{id_OnHandStok}" id="id_OnHandStok" readonly />-->
+<!--                            </div>-->
+<!--                            </td>-->
+<!--                            <td> <div class="form-group" >-->
+<!--                              <label for="nama">id_asset</label>-->
+<!--                              <input type="text" class="form-control" th:field="*{id_asset}" id="id_asset" readonly />-->
+<!--                            </div>-->
+<!--                            </td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td>-->
+<!--                              <div class="form-group">-->
+<!--                                <label for="nama">asset_code</label>-->
+<!--                                <div class="input-group">-->
+<!--                                  <div class="input-group-addon">-->
+<!--                                    <i class="fa fa-id-card"></i>-->
+<!--                                  </div>-->
+<!--                                  <input type="text" class="form-control" required="true" th:field="*{asset_code}" id="asset_code" name="asset_code" readonly />-->
+<!--                                  <span class="input-group-btn">-->
+<!--<button class="btn btn-info btn-flat" type="button" data-target="#modas" data-toggle="modal">Select</button>-->
+<!--</span>-->
+<!--                                </div>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                              <div class="form-group">-->
+<!--                                <label for="nama"> asset_name</label>-->
+<!--                                <input type="text" required="true" class="form-control" th:field="*{asset_name}" id="asset_name" name="asset_name" placeholder="Masukkan serial"/>-->
+<!--                              </div>-->
+<!--                            </td>-->
+<!--                            <td> <div class="form-group">-->
+<!--                              <label class="text-red" for="nama">begin_balance</label>-->
+<!--                              <input type="text" class="form-control" required="true" th:field="*{begin_balance}" id="begin_balance" name="begin_balance" placeholder="Masukkan begin_balance"/>-->
+<!--                            </div>-->
+<!--                            </td>-->
+
+<!--                          </tr>-->
+
+
+<!--                        </table>-->
+
+
+<!--                        &lt;!&ndash;  <div class="col-md-2">&ndash;&gt;-->
+<!--                        &lt;!&ndash;    <h3>Consume</h3>&ndash;&gt;-->
+<!--                        &lt;!&ndash;    <table class="table table-striped table-bordered table-hover" >&ndash;&gt;-->
+
+<!--                        &lt;!&ndash;      <tr>&ndash;&gt;-->
+<!--                        &lt;!&ndash;        <td><div class="form-group">&ndash;&gt;-->
+<!--                        &lt;!&ndash;          <label for="nama">consume</label>&ndash;&gt;-->
+<!--                        &lt;!&ndash;          <input type="text" required="true" class="form-control" th:field="*{consume}" id="consume" />&ndash;&gt;-->
+<!--                        &lt;!&ndash;        </div></td>&ndash;&gt;-->
+<!--                        &lt;!&ndash;      </tr>&ndash;&gt;-->
+<!--                        &lt;!&ndash;      <tr>&ndash;&gt;-->
+<!--                        &lt;!&ndash;        <td><div class="form-group">&ndash;&gt;-->
+<!--                        &lt;!&ndash;          <label for="nama">stok</label>&ndash;&gt;-->
+<!--                        &lt;!&ndash;          <input type="text" required="true" class="form-control" th:field="*{stok}" id="stok" />&ndash;&gt;-->
+<!--                        &lt;!&ndash;        </div></td>&ndash;&gt;-->
+<!--                        &lt;!&ndash;      </tr>&ndash;&gt;-->
+<!--                        &lt;!&ndash;      </tr>&ndash;&gt;-->
+
+<!--                        &lt;!&ndash;    </table>&ndash;&gt;-->
+<!--                        &lt;!&ndash;  </div >&ndash;&gt;-->
+
+<!--                      </div>-->
+
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <center>-->
+<!--                  <button class="btn btn-warning btn-lg" id="simpan_asset"  type="submit" value="oh_simpan" name="oh_action"><b class="glyphicon glyphicon-floppy-disk"></b> Post</button>-->
+<!--                  &lt;!&ndash;<button class="btn btn-warning btn-lg"  type="submit" value="ubah" name="action">edit</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <button class="btn btn-danger btn-lg"  type="submit" value="hapus" name="action"><b class="glyphicon glyphicon-trash"></b> delete</button>&ndash;&gt;-->
+<!--                </center>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--            <div class="tab-pane" id="tab_3">-->
+<!--              <div class='box-body pad'>-->
+<!--                <div class="panel panel-default">-->
+<!--                  <table aria-describedby="example_info" cellspacing="0"-->
+<!--                         class="table table-striped table-bordered table-hover"-->
+<!--                         id="tabel_log_wo_asset" role="grid" style="width: 100%;"-->
+<!--                         width="100%">-->
+<!--                    &lt;!&ndash; Header Table &ndash;&gt;-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                      <th>id_wo</th>-->
+<!--                      <th>id_asset</th>-->
+<!--                      <th>id_pm</th>-->
+<!--                      <th>id_dept</th>-->
+<!--                      <th>id_spare_part</th>-->
+<!--                      <th>kode_wo</th>-->
+<!--                      <th>nama_dept</th>-->
+<!--                      <th>title</th>-->
+<!--                      <th>kode_asset</th>-->
+<!--                      <th>lokasi</th>-->
+<!--                      <th>status_pekerjaan</th>-->
+<!--                      <th>prioritas</th>-->
+<!--                      <th>action</th>-->
+<!--                      <th>jenis_pekerjaan</th>-->
+<!--                      <th>pembuatan</th>-->
+<!--                      <th>uptime</th>-->
+<!--                      <th>downtime</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    &lt;!&ndash; Footer Table &ndash;&gt;-->
+<!--                  </table>-->
+<!--                  <input id="ax" name="ax" type=hidden value=""/>-->
+<!--                  <input id="bx" name="bx" type=hidden value=""/>-->
+<!--                  <input id="cx" name="cx" type=hidden value=""/>-->
+<!--                  <input id="dx" name="dx" type=hidden value=""/>-->
+<!--                  <input id="ex" name="ex" type=hidden value=""/>-->
+<!--                  <input id="fx" name="fx" type=hidden value=""/>-->
+<!--                  <input id="gx" name="gx" type=hidden value=""/>-->
+<!--                  <input id="hx" name="hx" type=hidden value=""/>-->
+<!--                  <input id="ix" name="ix" type=hidden value=""/>-->
+<!--                  <input id="jx" name="jx" type=hidden value=""/>-->
+<!--                  <input id="kx" name="kx" type=hidden value=""/>-->
+<!--                  <input id="lx" name="lx" type=hidden value=""/>-->
+<!--                  <input id="mx" name="mx" type=hidden value=""/>-->
+<!--                  <input id="nx" name="nx" type=hidden value=""/>-->
+<!--                  <input id="ox" name="ox" type=hidden value=""/>-->
+<!--                  <input id="px" name="px" type=hidden value=""/>-->
+<!--                  <input id="qx" name="qx" type=hidden value=""/>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+<!--<script >-->
+<!--$('#purchase_date').daterangepicker({-->
+<!--singleDatePicker: true,-->
+<!--showDropdowns: true,-->
+<!--locale: {-->
+<!--format: 'YYYY-MM-DD'-->
+<!--}-->
+<!--});-->
+
+<!--$("#simpan_asset").click(function (event)-->
+<!--{-->
+<!--//event.stopPropagation()-->
+<!--//  event.preventDefault()-->
+<!--//return false;-->
+<!--})-->
+
+<!--</script>-->

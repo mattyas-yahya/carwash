@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Data Plant</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<h2>
+Plant<small> </small>
+</h2>
+
+</section>
+<div layout:fragment="content">
+<div class="col-md-12">
+<div >
+<div>
+
+
+</div>
+<div class="box-body">
+
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" id="pltoverview" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" id="pltgeneral" data-toggle="tab">General</a></li>
+</ul>
+<div class="tab-content">
+<!--            <span th:replace="Spare_part/modal_safety"/>-->
+
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div class="panel panel-default">
+  <button class="btn btn-info btn-lg" id="pltrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+  <button class="btn btn-warning btn-lg" id="pltedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+  <button class="btn btn-success btn-lg" id="pltadd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+
+  <table id="tabelplt" class="table table-striped table-bordered table-hover"  cellspacing="0"
+   width="100%" role="grid" aria-describedby="example_info"
+   style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id_plant</th>
+<th >code_plant</th>
+<th>name_plant</th>
+
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+
+
+</div>
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+<form data-toggle="validator" id ="form_plant" name ="form_plant" role="form" th:object="${plant}"  method="post">
+<div id="info"></div>
+
+<div class="col-md-12">
+<div class='box-header'>
+<div class="box-body">
+
+<div class="col-md-12">
+  <table class="table table-striped table-bordered table-hover" width="220%">
+    <h2>General Information</h2>
+    <tr hidden>
+      <td> <div class="form-group" >
+        <label >id_plant</label>
+        <input type="text" class="form-control" th:field="*{id_plant}" id="id_plant" readonly />
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td> <div class="form-group" >
+        <label >code_plant</label>
+        <input type="text" class="form-control" th:field="*{code_plant}" id="code_plant"  />
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <label >name_plant</label>
+          <input type="text" required="true" class="form-control" th:field="*{name_plant}" id="name_plant" name="keterangan" />
+        </div>
+      </td>
+
+    </tr>
+
+
+  </table>
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+<center>
+  <button class="btn btn-warning btn-lg" type="submit" name="PL1"  id="PL1" ><b class="glyphicon glyphicon-floppy-disk"></b> Save
+  </button>
+  <button class="btn btn-info btn-lg" type="submit" name="PL2"  id="PL2" ><b class="glyphicon glyphicon-floppy-disk"></b> Delete
+  </button><!--<button class="btn btn-warning btn-lg" id="edit_asset"   type="submit" value="ubah" name="action">edit</button>-->
+<!--                  <button class="btn btn-danger btn-lg"  type="submit" value="hapus" name="laction"><b class="glyphicon glyphicon-trash"></b> delete</button>-->
+</center>
+</form>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
+
+<script >
+$('#purchase_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+$("#simpan_asset").click(function (event)
+{
+//event.stopPropagation()
+//  event.preventDefault()
+//return false;
+})
+$("#edit_asset").hide();
+
+</script>

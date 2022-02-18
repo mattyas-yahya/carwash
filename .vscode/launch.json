@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BasicApplication<springboot-matt-carwash>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.BasicApplication",
+            "projectName": "springboot-matt-carwash",
+            "args": ""
+        }
+    ]
+}

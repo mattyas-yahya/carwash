@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+
+
+<meta charset="utf-8"/>
+<title>Cost By date</title>
+</head>
+<body  class="hold-transition skin-blue sidebar-mini">
+<ol class="breadcrumb">
+    <h3 class="active">Cost By date</h3>
+</ol>
+<section layout:fragment="header">
+</section>
+<div layout:fragment="content">
+  <div class="item active">
+
+  <div id="cost_range" class="btn btn-success btn-lg">
+    <span></span> <b class="caret"></b>
+<!--    <a width="30%" type="button" id="reset" class="btn btn-block btn-info " ><i class=" glyphicon glyphicon-close"></i>Reset</a>-->
+    <button width="30%"  class="btn btn-block btn-warning"  type="button" ><i class=" glyphicon glyphicon-close"></i> Export To XLS</button>
+  </div>
+
+
+
+
+
+
+
+
+    <div class="box-body">
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab_1" data-toggle="tab">All Cost Doc</a></li>
+          <li ><a href="#tab_2" data-toggle="tab">Summary</a></li>
+          <li ><a id="" href="#tab_3" data-toggle="tab">log </a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="tab-pane active" id="tab_1">
+            <div class='box-body pad'>
+              <div class="panel panel-default">
+                <table   cellspacing="0"
+                         class="table table-striped table-bordered table-hover"
+                         id="tabelhistorycostdoc" role="grid" style="width: 100%;"
+                         width="100%">
+                  <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th> total</th>
+                  </tr>
+                  </thead>
+                </table>
+                <div id="dashboard_cost" width="30%"  style="height:600px">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab_2">
+            <table aria-describedby="example_info" cellspacing="0"
+                   class="display"
+                   id="tabel_sum_cost_by_date" role="grid" style="width: 100%;"
+                   width="100%">
+              <!-- Header Table -->
+              <thead>
+              <tr>
+                <th>Date</th>
+                <th>Kode</th>
+                <th>Sum Cost</th>
+              </tr>
+              </thead>
+              <!-- Footer Table -->
+            </table>
+            <div>
+              <div >
+                <div id="container_dt" width="30%"  style="height:600px">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab_3">
+            <table aria-describedby="example_info" cellspacing="0"
+                   class="display"
+                   id="tabel_aud_cost_by_date" role="grid" style="width: 100%;"
+                   width="100%">
+              <!-- Header Table -->
+              <thead>
+              <tr>
+                <th>id_cost_doc</th>
+                <th>id_cost_doc</th>
+                <th>id_wo_pm</th>
+                <th>id_inv_org</th>
+                <th>kode</th>
+                <th>issue</th>
+
+                <th>pembuatan</th>
+                <th>Account</th>
+                <th>status</th>
+                <th>cost_doc_type</th>
+                <th>item</th>
+
+                <th>quantity</th>
+                <th>cost</th>
+                <th> total</th>
+
+              </tr>
+              </thead>
+              <!-- Footer Table -->
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+
+</script>

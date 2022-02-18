@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Onhand</title>
+
+</head>
+<body >
+<section layout:fragment="header">
+<h2>
+Data Onhand Items
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Data Items</li>
+</ol>
+</section>
+<div layout:fragment="content">
+<div class="col-md-15">
+<div class="box">
+<div class="box-header">
+
+<div class="box-tools pull-right">
+<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+</button>
+<div class="btn-group">
+<button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+<i class="fa fa-wrench"></i></button>
+<ul class="dropdown-menu" role="menu">
+
+<li class="divider"></li>
+<li>
+
+
+</li>
+</ul>
+</div>
+<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+</div>
+</div>
+<div class="box-body">
+
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>
+<li ><a href="#tab_2" data-toggle="tab">General</a></li>
+</ul>
+<div class="tab-content">
+
+<span th:replace="Onhand/modal_item"/>
+
+
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div class="panel panel-default">
+  <form data-toggle="validator" id ="form_onhand" name ="form_onhand" role="form" th:object="${Onhand}"  method="post">
+
+<div id="info"></div>
+<table class="table table-striped table-bordered table-hover" >
+  <tr >
+    <td hidden> <div class="form-group" >
+      <label for="nama">id_onhand</label>
+      <input type="text" class="form-control" th:field="*{id_onhand}" name="id_onhand" id="id_onhand" readonly />
+    </div></td>
+    <td hidden> <div class="form-group" >
+      <label for="nama">id_items</label>
+      <input type="text" class="form-control" th:field="*{id_items}" id="id_items"  name="id_items" readonly />
+    </div></td>
+    <tr>
+
+  <td>
+    <div class="form-group">
+      <label class="text-red" for="nama"> <dt>kode_inventory</dt></label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-id-card"></i>
+        </div>
+        <input type="text" class="form-control" th:field="*{kode_inventory}" id="kode_inventory" name="kode_inventory" readonly />
+        <span class="input-group-btn">
+<button class="btn btn-info btn-flat" type="button" data-target="#modal_item" data-toggle="modal">Select</button>
+</span>
+      </div>
+    </div>
+  </td>
+    <td>
+      <div class="form-group">
+        <label for="nama"> nama</label>
+        <input type="text" required="true" class="form-control" th:field="*{nama}" id="nama" name="nama" placeholder="Masukkan nama"/>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label for="nama"> stok_awal</label>
+        <input type="text" required="true" class="form-control"  th:field="*{stok_awal}" id="stok_awal" name="stok_awal" placeholder=" "/>
+      </div>
+    </td>
+  <td>
+    <div class="form-group">
+      <label for="nama"> pemakaian</label>
+      <input type="text" required="true" class="form-control"  th:field="*{pemakaian}" id="pemakaian" name="pemakaian" placeholder=" "/>
+    </div>
+  </td>
+  <td>
+    <div class="form-group">
+      <label for="nama"> adjustment</label>
+      <input type="text" required="true" class="form-control" th:field="*{adjustment}" id="adjustment" name="adjustment" placeholder=" "/>
+    </div>
+  </td>
+  <td>
+    <div class="form-group">
+      <label for="nama"> stok_akhir</label>
+      <input type="text" required="true" class="form-control" th:field="*{stok_akhir}" id="stok_akhir" name="stok_akhir" placeholder=" "/>
+    </div>
+  </td>
+</tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <label for="nama"> harga</label>
+        <input type="text" required="true" class="form-control" th:field="*{harga}" id="harga" name="harga" placeholder=" "/>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+      <label for="nama">jenis</label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-id-card"></i>
+        </div>
+        <select th:field="*{jenis}" id="jenis" class="form-control" required="true">
+          <option th:each="type : ${Onhand}" th:value="'makanan'" th:text="makanan">makanan</option>
+          <option th:each="type : ${Onhand}"  th:value="'minuman'" th:text="minuman">minuman</option>
+          <option th:each="type : ${Onhand}"  th:value="'bahan_baku_makanan'" th:text="bahan_baku_makanan">bahan baku makanan</option>
+          <option th:each="type : ${Onhand}"  th:value="'rokok'" th:text="rokok">rokok</option>
+          <option th:each="type : ${Onhand}"  th:value="'sabun'" th:text="sabun">sabun</option>
+          <option th:each="type : ${Onhand}"  th:value="'peralatan_mandi'" th:text="peralatan_mandi">peralatan mandi</option>
+          <option th:each="type : ${Onhand}"  th:value="'Lain_Lain'" th:text="Lain_Lain">Lain - Lain</option>
+        </select>
+      </div>
+    </div>
+    </td>
+    <td>
+      <div class="form-group">
+      <label for="nama">UOM</label>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-id-card"></i>
+        </div>
+        <select id="uom" th:field="*{uom}" class="form-control" required="true">
+          <option th:each="type : ${Onhand}" th:value="'KG'" th:text="KG">KG</option>
+          <option th:each="type : ${Onhand}"  th:value="'g'" th:text="g">g</option>
+          <option th:each="type : ${Onhand}"  th:value="'pcs'" th:text="pcs">pcs</option>
+          <option th:each="type : ${Onhand}"  th:value="'unit'" th:text="unit">unit</option>
+        </select>
+      </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+
+  </tr>
+  </tr>
+</table>
+
+
+
+  <table class="table table-striped table-bordered table-hover" >
+  <tr>      <button class="btn btn-warning btn-lg" id="oh1"  type="submit" value="ac_simpan" name="oh1"><b class="glyphicon glyphicon-floppy-disk"></b> Post</button>
+    <!--<button class="btn btn-warning btn-lg"  type="submit" value="ubah" name="action">edit</button>-->
+    </tr>
+    <tr><button class="btn btn-warning btn-lg" type="submit" name="oh2"  id="oh2" ><b class="glyphicon glyphicon-floppy-disk"></b> delete
+    </button>
+    </tr>
+  </table>
+
+</form>
+  <button class="btn btn-info btn-lg" id="onrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+  <button class="btn btn-warning btn-lg" id="onedit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Select</button>
+  <button class="btn btn-danger btn-lg" id="oncancel" type="button" ><b class="glyphicon glyphicon-pencil"></b> Cancel</button>
+<table id="tabel_Onhand" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>idstok_card</th>
+<th>id_onhand</th>
+<th>Inventory Code</th>
+<th> Begin Balance </th>
+<th>Transfer</th>
+<th> Consume </th>
+<th> Adjustment</th>
+  <th> Note</th>
+
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+</div>
+<!--    <button class="btn btn-info btn-lg" type="button" aria-label="Close">Export To XLS</button>-->
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+
+</div>
+<div class="tab-pane" id="tab_3">
+
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
+<script >
+$('#purchase_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+var form_onhand = $('#form_onhand');
+$("#form_onhand").on("click", "#oh1", function()
+{
+$.ajax
+({
+type: "POST",
+url: "/OnhandSave",
+data: form_onhand.serialize(),
+cache: false,
+beforeSend: function(data)
+{
+var result = data;
+Sender();
+},
+success: function(data)
+{
+var result = data;
+success();
+},
+error: function(xhr, status, error)
+{
+ERROR();
+}
+});
+return false;
+}); 
+</script>

@@ -1,0 +1,32 @@
+id_asset                           asset_tag garansgrup   harga_belkode_asset          lokasimodel               nama_asset         serial     tgl_beli_asset
+a77461dc-f665-4012-8c60-455aaae98bcAC001OFC      12elektri1200000.0AC001               OFFICEAC HITACHI 001      AC                 9,09128E+11  01/01/2019
+a72461dc-f665-4012-8c60-455aaae98bcAC002OFC       1elektri1300000.0T11                 OFFICET11                 TIMBANGAN          1,09128E+11  01/01/2019
+                        1,11111E+17AC003OFC       2elektri1200000.1HD1                 OFFICEHD1                 HANDPALLET         2,09128E+11  01/01/2019
+                        2,22222E+17  80601205     3elektri1300000.1BLW001              OFFICEBLW001              BLOWER             3,09128E+11  01/01/2019
+                        3,33333E+17  80808081     4elektri1200000.2000H1               OFFICE000H1               PENGHISAP DEBU     4,09128E+11  01/01/2019
+                        4,44444E+17  80416018     5elektri1300000.2FRK01               OFFICEFRK01               FORKLIFT           5,09128E+11  01/01/2019
+                        5,55556E+17  80902122     6elektri1200000.3PLY1                OFFICEPLY1                PULLEY             6,09128E+11  01/01/2019
+                        6,66667E+17   8060722     7elektri1300000.3EXT001              OFFICEEXT001              extruder           7,09128E+11  01/01/2019
+                        7,77778E+17   9020200     8elektri1200000.4DC03                OFFICEDC03                Drumcoating        8,09128E+11  01/01/2019
+                        8,88889E+17 902010113     9elektri1300000.4DR01                OFFICEDR01                dryer              9,09128E+11  01/01/2019
+                              1E+18 809010000    10elektri1200000.5E021                OFFICEE021                extruder           1,00913E+12  01/01/2019
+                        1,11111E+18   8091003    11elektri1300000.5P33P113             OFFICEP33P113             pulverizer 1A      1,10913E+12  01/01/2019
+                        1,22222E+18  80102090    12elektri1200000.6ST301J1991          OFFICEST301J1991          steam              1,20913E+12  01/01/2019
+                        1,33333E+18 809021241    13elektri1300000.6P9310               OFFICEP9310               pellet             1,30913E+12  01/01/2019
+                        1,44444E+18  80704017    14elektri1200000.7FN001               OFFICEFN001               FAN HISAP          1,40913E+12  01/01/2019
+                        1,55556E+18  80607221    15elektri1300000.7SCRN                OFFICESCRN                SCREEN             1,50913E+12  01/01/2019
+                        1,66667E+18 902010993    16elektri1200000.8LCD11               OFFICELCD11               LCD                1,60913E+12  01/01/2019
+                        1,77778E+18  80416012    17elektri1300000.8P001                OFFICEP001                PROYEKTOR          1,70913E+12  01/01/2019
+                        1,88889E+18  80902124    18elektri1200000.9PLV1                OFFICEPLV1                Pulverizer         1,80913E+12  01/01/2019
+                              2E+18  80902114    19elektri1300000.9CNDTR               OFFICECNDTR               Conditioner extrude1,90913E+12  01/01/2019
+                        2,11111E+18 809100344    20elektri1200000.18UM-PRO-SLTP        OFFICE8UM-PRO-SLTP        Extruder           2,00913E+12  01/01/2019
+                        2,22222E+189020200212    21elektri1300000.18UM-BEN-LPG         OFFICE8UM-BEN-LPG         Dryer              2,10913E+12  01/01/2019
+                        2,33333E+18  80805057    22elektri1200000.18UM-BEN-OXY         OFFICE8UM-BEN-OXY         Pellet mill        2,20913E+12  01/01/2019
+                        2,44444E+18  80805030    23elektri1300000.18UM-BEN-MAJUN       OFFICE8UM-BEN-MAJUN       LAS                2,30913E+12  01/01/2019
+                        2,55556E+18  80910032    24elektri1200000.10817-0111-0002      OFFICE0817-0111-0002      LAS LISTRIK        2,40913E+12  01/01/2019
+                        2,66667E+18  80910036    25elektri1300000.18UM-BEN-TERMINAL10  OFFICE8UM-BEN-TERMINAL10  SOLDER             2,50913E+12  01/01/2019
+                        2,77778E+18  90201099    26elektri1200000.18UM-BEN-CWHEEL-4    OFFICE8UM-BEN-CWHEEL-4    GENSET             2,60913E+12  01/01/2019
+                        2,88889E+18  80901204    27elektri1300000.18MS-BOIL-BVALKITZ-1"OFFICE8MS-BOIL-BVALKITZ-1"LAMPU SOROT        2,70913E+12  01/01/2019
+                              3E+18  80601061    28elektri1200000.18UM-PRO-SLTP        OFFICE8UM-PRO-SLTP        SERVER             2,80913E+12  01/01/2019
+                        3,11111E+18  90202002    29elektri1300000.18CB151              OFFICE8CB151              CRUSHER            2,90913E+12  01/01/2019
+                        3,22222E+18  80901004    30elektri1200000.1GR001               OFFICEGR001               GRINDA             3,00913E+12  01/01/2019

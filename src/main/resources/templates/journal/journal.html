@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Moveout</title>
+
+</head>
+<body >
+
+<section layout:fragment="header">
+<h2>
+Moveout
+</h2>
+<ol class="breadcrumb">
+<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+<li class="active">Moveout Items</li>
+</ol>
+</section>
+<div layout:fragment="content">
+<span th:replace="Modal_w/modal_vendor"/>
+<span th:replace="journal/modal_items"/>
+    <div id="info"></div>
+<div class="col-md-12">
+<div id="ioverview" class="col-md-9">
+
+</div>
+<div id="" class="col-md-12">
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+<li class="active"><a href="#tab_1" id="overview" data-toggle="tab">All Inventory</a></li>
+<li ><a href="#tab_2" id="form_stok_card" data-toggle="tab">Stock Card</a></li>
+</ul>
+<div class="tab-content">
+
+
+
+
+<div class="tab-pane active" id="tab_1">
+<div class='box-body pad'>
+<div >
+<form data-toggle="validator" role="form" name="form_journal" id="form_journal"  th:object="${journal}"  method="post">
+
+<table class="table table-striped table-bordered table-hover" >
+<tr >
+<div class="form-group" hidden>
+<label for="nama">id_journal</label>
+<input type="text" class="form-control"  name="id_journal" id="id_journal" readonly />
+</div>
+</tr >
+
+<tr>
+<div class="form-group">
+<label for="nama">journal_date</label>
+<input type="text" required="true" class="form-control"  id="journal_date" name="journal_date" placeholder="journal_date"/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama">journal_code</label>
+<input type="text" required="true" class="form-control"  id="jjournal_code" name="journal_code" placeholder="journal_code"/>
+</div>
+</tr>
+
+</table>
+
+
+
+<table class="table table-striped table-bordered table-hover" >
+<tr><button class="btn btn-info btn-lg" type="submit" name="JR1"  id="JR1" ><b class="glyphicon glyphicon-floppy-disk"></b> SUBMIT
+</button><!--<button class="btn btn-warning btn-lg"  type="submit" value="ubah" name="action">edit</button>-->
+</tr>
+
+</table>
+
+</form>
+
+    <div class="form-group">
+        <label for="nama">Journal Code</label>
+        <input type="text" required="true" class="form-control"  id="jurnal_code" name="jurnal_code" placeholder="jurnal_code"/>
+    </div>
+    <button class="btn btn-info btn-lg" id="jrrefresh" type="button" ><b class="glyphicon glyphicon-refresh"></b> Refresh</button>
+<button class="btn btn-warning btn-lg" id="jredit" type="button" ><b class="glyphicon glyphicon-pencil"></b> Edit</button>
+<button class="btn btn-success btn-lg" id="jradd" type="button" ><b class="glyphicon glyphicon-plus"></b> Add</button>
+
+<table id="tabel_journal" class="table table-striped table-bordered table-hover"  cellspacing="0"
+width="100%" role="grid" aria-describedby="example_info"
+style="width: 100%;">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id</th>
+<th>journal_date</th>
+<th>journal_code</th>
+
+</tr>
+</thead>
+
+<!-- Footer Table -->
+</table>
+<div id="div_journal_transaction">
+<table id="tabel_journal_transaction" class="table table-striped table-bordered table-hover"  cellspacing="0"
+           width="100%" role="grid" aria-describedby="example_info"
+           style="width: 100%;">
+        <!-- Header Table -->
+        <thead>
+        <tr>
+            <th>id_journal_transaction</th>
+            <th>journal_code</th>
+            <th>idstok_card</th>
+            <th>date_transaction</th>
+            <th>kode_inventory</th>
+            <th>stok_awal</th>
+            <th>transfer</th>
+            <th>consume</th>
+            <th>adjustment</th>
+            <th>stok_akhir</th>
+            <th>note</th>
+        </tr>
+        </thead>
+
+        <!-- Footer Table -->
+    </table>
+</div>
+</div>
+<!--    <button class="btn btn-info btn-lg" type="button" aria-label="Close">Export To XLS</button>-->
+</div>
+</div>
+<div class="tab-pane" id="tab_2">
+
+<form data-toggle="validator" role="form" name="form_stok" id="form_stok"   method="post">
+<table>
+<tr >
+<div class="form-group" hidden>
+<label for="nama">id_journal_transaction</label>
+<input type="text" class="form-control"  name="id_journal_transaction" id="stok_id_journal_transaction" readonly />
+</div>
+</tr >
+<tr>
+<div class="form-group">
+<label for="nama">journal_date</label>
+<input type="text" required="true" class="form-control"  id="stok_journal_date" name="journal_date" placeholder="journal_date" readonly/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama">journal_code</label>
+<input type="text" required="true" class="form-control"  id="stok_journal_code" name="journal_code" placeholder="journal_code" readonly/>
+</div>
+</tr>
+<tr>
+<div class="form-group" hidden>
+<label for="nama">idstok_card</label>
+<input type="text" required="true" class="form-control"  id="stok_idstok_card" name="journal_date" placeholder="idstok_card" readonly/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama">date_transaction</label>
+<input type="text" required="true" class="form-control"  id="stok_date_transaction" name="date_transaction" placeholder="date_transaction"/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label class="text-red" for="nama"> <dt>kode_inventory</dt></label>
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-id-card"></i>
+</div>
+<input type="text" class="form-control" id="stok_kode_inventory" name="kode_inventory" readonly />
+<span class="input-group-btn">
+<button class="btn btn-info btn-flat" type="button" data-target="#modal_items" data-toggle="modal">Select</button>
+</span>
+</div>
+</div>
+</tr>
+    <tr>
+        <div class="form-group">
+            <label for="nama">Price</label>
+            <input type="text" required="true" class="form-control"  id="harga" name="harga" placeholder="price"/>
+        </div>
+    </tr>
+<tr>
+<div class="form-group">
+<label for="nama">Begin Balance</label>
+<input type="text" required="true" class="form-control"  id="stok_stok_awal" name="stok_awal" placeholder="stok_awal"/>
+</div>
+</tr>
+<tr>
+<div class="form-group">
+<label for="nama">adjustment</label>
+<input type="text" required="true" class="form-control"  id="stok_adjustment" name="adjustment" placeholder="adjustment"/>
+</div>
+</tr>
+</table>
+<table class="table table-striped table-bordered table-hover" >
+<tr><button class="btn btn-info btn-lg" type="submit" name="STK1"  id="STK1" ><b class="glyphicon glyphicon-floppy-disk"></b> SUBMIT
+</button><!--<button class="btn btn-warning btn-lg"  type="submit" value="ubah" name="action">edit</button>-->
+</tr>
+    <tr><button class="btn btn-warning btn-lg" type="submit" name="STK2"  id="STK2" ><b class="glyphicon glyphicon-refresh"></b> Close & Create New
+    </button><!--<button class="btn btn-warning btn-lg"  type="submit" value="ubah" name="action">edit</button>-->
+    </tr>
+</table>
+</form>
+
+
+</div>
+<div class="tab-pane" id="tab_3">
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<!--    <button class="btn btn-info btn-lg" type="button" aria-label="Close">Export To XLS</button>-->
+</body>
+
+</html>
+<script >
+$('#purchase_date').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+
+</script>

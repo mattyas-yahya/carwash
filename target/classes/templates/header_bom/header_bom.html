@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html layout:decorate="layout"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8"/>
+<title>Cost Document</title>
+</head>
+<body style="background: transparent; border: none;" class="hold-transition skin-blue sidebar-mini">
+<section layout:fragment="header">
+<ol class="breadcrumb">
+<h1 class="active">  Bill of Material</h1>
+</ol>
+</section>
+
+<div layout:fragment="content">
+<div class="col-md-12">
+<div >
+<div >
+<h2 class="box-title"></h2>
+
+
+</div>
+<div class="box-body">
+<div >
+<ul class="nav nav-tabs">
+<li class="active"><a data-toggle="tab" id="t1" href="#tab_4">Overview</a></li>
+<li><a data-toggle="tab" id="t2" href="#tab_2">General</a></li>
+</ul>
+<!--<span th:replace="cost_doc/modal_acc"/>-->
+<!--  <span th:replace="cost_doc/modal_rsc"/>-->
+<div class="tab-content">
+<div class="tab-pane active"  id="tab_4">
+<div class="panel panel-default">
+
+<table width="500">
+<td></td>
+<small> </small>
+<div  id="alertmu"  class="callout callout-info">
+Masukkan kode wo dan Double Click pada input kode wo untuk detail
+</div>
+</table>
+<div >
+<div  id="tabelover" class="panel panel-default">
+<div class="box-body">
+<div >
+<ul class="nav nav-tabs">
+<!--              <li class="active"><a data-toggle="tab" id="1wo" href="#tab_1x">End Job</a></li>-->
+<!--              <li><a data-toggle="tab" id="2wo" href="#tab_2x">Preventive Maintenance</a></li>-->
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1x">
+<div >
+<div class="panel panel-default">
+<form data-toggle="validator" id ="form_header_bom" name ="form_header_bom" role="form" th:object="${header_bom}"  method="post">
+<div id="info"></div>
+
+<div class="col-md-12">
+<div class="box-body">
+<table class="table table-striped table-bordered table-hover" width="220%">
+<tr >
+<td hidden> <div class="form-group" >
+<label for="nama">id_header_bom</label>
+<input type="text" class="form-control" th:field="*{id_header_bom}" id="id_header_bom" readonly />
+</div>
+</td>
+
+<td> <div class="form-group" >
+<label for="nama">kode_bom</label>
+<input type="text" class="form-control" th:field="*{kode_bom}" id="kode_bom"  />
+</div>
+</td>
+
+<td>
+<div class="form-group">
+<label for="nama">create_date</label>
+<input type="text" required="true" class="form-control" th:field="*{create_date}" id="create_date" name="create_date" />
+</div>
+</td>
+  <td>
+    <div class="form-group">
+      <label for="nama">kode_formula</label>
+      <input type="text" required="true" class="form-control" th:field="*{kode_formula}" id="kode_formula" name="kode_formula" />
+    </div>
+  </td>
+  <td>
+    <div class="form-group">
+      <label for="nama">Quantity</label>
+      <input type="text" required="true" class="form-control" th:field="*{Quantity}" id="Quantity" name="Quantity" />
+    </div>
+  </td>
+<td>
+<div class="form-group">
+<label for="nama">note</label>
+<input type="text" required="true" class="form-control" th:field="*{note}" id="note" name="note" />
+</div>
+</td>
+</tr>
+
+</table>
+
+
+
+
+
+</div>
+  <center>
+    <button class="btn btn-warning btn-lg" type="submit" name="bm1"  id="bm1" ><b class="glyphicon glyphicon-floppy-disk"></b> Save
+    </button>                        <!--<button class="btn btn-warning btn-lg" id="edit_asset"   type="submit" value="ubah" name="action">edit</button>-->
+    <!--                  <button class="btn btn-danger btn-lg"  type="submit" value="hapus" name="laction"><b class="glyphicon glyphicon-trash"></b> delete</button>-->
+  </center>
+</div>
+</form>
+<table   cellspacing="0"
+class="table table-striped table-bordered table-hover"
+id="tabel_header_bom" role="grid" style="width: 100%;"
+width="100%">
+<!-- Header Table -->
+<thead>
+<tr>
+<th>id_header_bom</th>
+<th>kode_bom</th>
+<th>create_date</th>
+  <th>Kode_formula</th>
+  <th>Quantity</th>
+<th>note</th>
+</tr>
+</thead>
+<!-- Footer Table -->
+</table>
+  <table   cellspacing="0"
+           class="table table-striped table-bordered table-hover"
+           id="tabel_bom" role="grid" style="width: 100%;"
+           width="100%">
+    <!-- Header Table -->
+    <thead>
+    <tr>
+      <th>id_bom</th>
+      <th>create_date</th>
+      <th>kode_bom</th>
+      <th>kode_formula</th>
+      <th>formula_name</th>
+      <th>kode_Items</th>
+      <th>proposal</th>
+      <th>UOM</th>
+      <th>consume</th>
+      <th>subtotal</th>
+
+    </tr>
+    </thead>
+    <!-- Footer Table -->
+  </table>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div >
+</div>
+</div>
+<div class="tab-pane"  id="tab_2">
+
+</div>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
+<script >
+$('#Selesai').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+<!--$("#endiv").hide();-->
+<!--$("#solution").hide();-->
+<!--$('#status_pekerjaan').on('change', function() {-->
+<!--var selected = $('#status_pekerjaan option:selected').val();-->
+<!--if ( selected === "End_Job" ) {-->
+<!--//alert("will show");-->
+<!--$("#endiv").show();-->
+<!--$("#solution").show();-->
+<!--// inputToHide.show();-->
+<!--}-->
+<!--else {-->
+<!--//alert("will hide");-->
+<!--$("#endiv").hide();-->
+<!--$("#solution").hide();-->
+<!--document.getElementById("Selesai").value =  "null";-->
+<!--//  inputToHide.hide();-->
+<!--}-->
+<!--});-->
+
+$("#tabelcostdocin").hide();
+function hitungAllmtbf()
+{
+
+}
+
+function hitungAlloee()
+{
+var work_time    = parseInt(document.getElementById("work_time").value);
+var Quantity = parseInt(document.getElementById("Quantity").value);
+var cycle_time = parseInt(document.getElementById("cycle_time").value);
+var good_pieces = parseInt(document.getElementById("good_pieces").value);
+
+var d        = parseFloat(document.getElementById("downtime").value);
+
+
+document.getElementById("ar").value =(work_time-d/work_time)*100;
+document.getElementById("pr").value =(Quantity/work_time*cycle_time)*100;
+document.getElementById("qr").value =(good_pieces / Quantity )* 100;
+
+var uptime    = parseFloat(document.getElementById("uptime").value);
+var QOfTroble = parseFloat(document.getElementById("quantity_troble").value);
+var DT        = parseFloat(document.getElementById("downtime").value);
+
+
+document.getElementById("mtbf").value =uptime/QOfTroble;
+document.getElementById("mttr").value =DT/QOfTroble;
+}
+$("#treference").dblclick(function()
+{
+$("#tabelcostdocin").show();
+});
+<!--$("#1wo").click(function()-->
+<!--{-->
+<!--$("#3wo").hide();-->
+<!--});-->
+
+
+$('#pembuatan').daterangepicker({
+singleDatePicker: true,
+showDropdowns: true,
+locale: {
+format: 'YYYY-MM-DD'
+}
+});
+
+
+<!--$("#alertmu").fadeTo(2000, 1000).slideUp(1000, function()-->
+<!--{-->
+<!--$("#alertmu").slideUp(1000);-->
+<!--});-->
+
+
+
+<!--  $("#t2").hide();-->
+<!--     $('#stts').on('change', function() {-->
+<!--         var selected = $('#stts option:selected').val();-->
+<!--         if ( selected === "Costing" )-->
+<!--          {-->
+<!--              $("#t2").show();-->
+<!--               $("#tab_2").show();-->
+
+<!--         }-->
+<!--         else-->
+<!--         {-->
+<!--             $("#t2").hide();-->
+<!--                          $("#tab_2").hide();-->
+
+<!--         }-->
+<!--     });-->
+
+
+var form_cost_document = $('#form_cost_document');
+$("#form_cost_document").on("click", "#B1", function() {
+$.ajax
+({
+type: "POST",
+url: "/CostSave",
+data: form_cost_document.serialize(),
+cache: false,
+success: function(data)
+{
+var result = data;
+costdoc_clear();
+$("#info").html('Successfully updated record!');
+$("#info").addClass("alert alert-success");
+
+$("#info").fadeTo(2000, 500).slideUp(500, function()
+{
+$("#info").slideUp(1000);
+});
+}
+});
+return false;
+}); 
+
+$("#form_cost_document").on("click", "#B2", function() {
+$.ajax
+({
+type: "DELETE",
+url: "/CostDelete",
+data: form_cost_document.serialize(),
+cache: false,
+success: function(data)
+{
+var result = data;
+costdoc_clear();
+$("#info").html('Successfully Delete record!');
+$("#info").addClass("alert alert-danger");
+
+$("#info").fadeTo(2000, 500).slideUp(500, function()
+{
+$("#info").slideUp(500);
+});
+}
+});
+return false;
+}); 
+
+$("#form_cost_document").on("click", "#B3", function() {
+$.ajax
+({
+type: "POST",
+url: "/Costing",
+data: form_cost_document.serialize(),
+cache: false,
+success: function(data)
+{
+var result = data;
+costdoc_clear();
+$("#info").html('Successfully Costing record!');
+$("#info").addClass("alert alert-danger");
+
+$("#info").fadeTo(2000, 500).slideUp(500, function()
+{
+$("#info").slideUp(500);
+});
+}
+});
+return false;
+}); 
+
+function costdoc_clear()
+{
+document.getElementById("id_cost_doc").value = "";
+document.getElementById("id_inv_org").value = "";
+document.getElementById("item").value = "";
+document.getElementById("quantity").value = "";
+document.getElementById("cost").value = "";
+document.getElementById("total").value = "";
+}
+</script>
+
